@@ -29,6 +29,7 @@
 		<selenium.version>3.4.0</selenium.version>	    	  
 	    <mysql.version>6.0.5</mysql.version>
 	    <guava.version>21.0</guava.version>
+	    <appium.version>5.0.0-BETA9</appium.version>
 	</properties>	
 	
 </project>

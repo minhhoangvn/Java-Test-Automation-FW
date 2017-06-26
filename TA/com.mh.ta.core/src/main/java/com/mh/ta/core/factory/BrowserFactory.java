@@ -1,5 +1,9 @@
 package com.mh.ta.core.factory;
 
-public class BrowserFactory {
+import org.openqa.selenium.WebDriver;
 
+public class BrowserFactory {
+	public WebDriver startDriver(String driverType) {
+		return null;
+	}
 }
