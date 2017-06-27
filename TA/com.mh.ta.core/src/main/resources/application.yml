@@ -1,0 +1,8 @@
+app:
+  sut-config:
+    a: 1
+    b: 2
+    c: 3
+  driver-config:
+    d: 4
+    e: 5

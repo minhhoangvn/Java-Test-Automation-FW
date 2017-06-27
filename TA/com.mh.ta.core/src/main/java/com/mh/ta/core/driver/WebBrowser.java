@@ -1,22 +1,18 @@
 package com.mh.ta.core.driver;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+
+import com.mh.ta.core.config.DriverConfig;
 
 public abstract class WebBrowser implements Driver<WebDriver> {
-	protected DesiredCapabilities capabilities;
-	protected Object services;
-	protected Object options;
+	protected DriverConfig config = null;
 
-	protected void setCapabilities(DesiredCapabilities capabilities) {
-		this.capabilities = capabilities;
+	protected DriverConfig getConfig() {
+		return config;
 	}
 
-	protected void setDriverSerices(Object services) {
-		this.services = services;
+	protected void setConfig(DriverConfig config) {
+		this.config = config;
 	}
 
-	protected void setDriverOptions(Object options) {
-		this.options = options;
-	}
 }

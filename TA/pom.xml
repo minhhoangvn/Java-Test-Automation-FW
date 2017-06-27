@@ -30,6 +30,7 @@
 	    <mysql.version>6.0.5</mysql.version>
 	    <guava.version>21.0</guava.version>
 	    <appium.version>5.0.0-BETA9</appium.version>
+	    <testng.version>6.11</testng.version>
 	</properties>	
 	
 </project>

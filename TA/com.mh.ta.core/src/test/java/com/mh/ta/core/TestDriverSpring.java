@@ -4,24 +4,24 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
-import static org.junit.Assert.*;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import com.mh.ta.core.config.BrowserManagerConfig;
+import com.mh.ta.core.config.TestRunningConfig;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { BrowserManagerConfig.class })
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = TestDriverSpring.class)
+@ContextConfiguration(classes = TestRunningConfig.class)
+
 public class TestDriverSpring {
-	@Autowired
-	private WebDriver driver=null;
 
+	@Autowired
+	private WebDriver webDriver;
 
 	@Test
 	public void testInstaceDriverSpring() {
-		assertNotNull(this.driver);
-		driver.get("http://www.google.com");
-		driver.get("http://dantri.com.vn");
-		driver.quit();
+		webDriver.get("http://www.google.com");
+
 	}
 }

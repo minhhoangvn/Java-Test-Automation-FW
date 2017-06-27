@@ -11,17 +11,19 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import com.mh.ta.core.webdriver.ChromeBrowser;
 
 public class TestDriver {
-	private WebDriver driver=null;
+	private WebDriver driver = null;
+
 	@After
-	public void closeDriver(){
-		if (driver!=null)
+	public void closeDriver() {
+		if (driver != null)
 			driver.quit();
 	}
+
 	@Test
-	public void testInstanceDriver() {		
+	public void testInstanceDriver() {
 		ChromeBrowser chrome = new ChromeBrowser();
-		driver = chrome.startDriver(DesiredCapabilities.chrome(), new ChromeOptions());
+		driver = chrome.startDriver();
 		assertNotNull(driver);
-		
+
 	}
 }
