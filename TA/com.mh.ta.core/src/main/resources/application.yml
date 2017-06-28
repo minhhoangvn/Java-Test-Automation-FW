@@ -1,8 +1,12 @@
 app:
   sut-config:
-    a: 1
-    b: 2
-    c: 3
+    base-uri: google.com/
+    username: none
+    password: none
+    pageload-timeout: 60
   driver-config:
-    d: 4
-    e: 5
+    type: web
+    browser: chrome
+    implicit-wait: 30
+    hidden: false
+    maximize: true

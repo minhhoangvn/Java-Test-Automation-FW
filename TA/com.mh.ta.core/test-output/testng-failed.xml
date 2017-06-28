@@ -6,11 +6,11 @@
       <class name="com.mh.ta.core.TestSettingsConfig">
         <methods>
           <include name="springTestContextBeforeTestClass"/>
-          <include name="testB"/>
           <include name="setUp"/>
           <include name="springTestContextPrepareTestInstance"/>
           <include name="springTestContextAfterTestClass"/>
           <include name="springTestContextBeforeTestMethod"/>
+          <include name="testA"/>
           <include name="clean"/>
           <include name="springTestContextAfterTestMethod"/>
         </methods>

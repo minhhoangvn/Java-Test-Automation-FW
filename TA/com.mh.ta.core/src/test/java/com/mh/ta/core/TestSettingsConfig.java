@@ -21,6 +21,9 @@ public class TestSettingsConfig extends AbstractTestNGSpringContextTests {
 	@Autowired
 	private WebDriver webDriver;
 
+	@Autowired
+	private FrameworkSettings setting;
+
 	private WebDriver driver = null;
 
 	@BeforeMethod
@@ -30,6 +33,7 @@ public class TestSettingsConfig extends AbstractTestNGSpringContextTests {
 
 	@Test
 	public void testA() {
+		System.err.println(setting.getDriverConfig());
 		this.driver.get("http://www.google.com");
 
 	}
@@ -37,6 +41,6 @@ public class TestSettingsConfig extends AbstractTestNGSpringContextTests {
 	@AfterMethod
 	public void clean() {
 		this.driver.close();
-		
+
 	}
 }

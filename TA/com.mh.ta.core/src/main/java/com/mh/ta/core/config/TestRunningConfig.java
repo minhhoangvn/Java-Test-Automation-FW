@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import com.mh.ta.core.webdriver.ChromeBrowser;
 
@@ -12,11 +13,14 @@ import com.mh.ta.core.webdriver.ChromeBrowser;
 @EnableConfigurationProperties(FrameworkSettings.class)
 public class TestRunningConfig {
 
+	@Autowired
+	public FrameworkSettings setting;
+
 	@Bean
-	public WebDriver webDriver(@Autowired FrameworkSettings setting) {
-		System.err.println(setting);
-		System.err.println(setting.getDriverConfig());
-		System.err.println(setting.getSutConfig());
+	public WebDriver webDriver() {
+		System.err.println(this.setting);
+		System.err.println(this.setting.getDriverConfig());
+		System.err.println(this.setting.getSutConfig());
 		return new ChromeBrowser().startDriver();
 	}
 }
