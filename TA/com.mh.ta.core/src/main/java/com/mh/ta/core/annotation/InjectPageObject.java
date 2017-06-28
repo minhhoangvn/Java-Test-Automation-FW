@@ -13,5 +13,5 @@ import com.mh.ta.core.config.TestRunningConfig;
 @Target(ElementType.TYPE)
 @Import({ TestRunningConfig.class })
 public @interface InjectPageObject {
-	String[] basePackages() default "";
+	String[] pageObjectPackageName() default "";
 }

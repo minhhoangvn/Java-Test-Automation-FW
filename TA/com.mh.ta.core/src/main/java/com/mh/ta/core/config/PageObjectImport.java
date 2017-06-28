@@ -17,34 +17,30 @@ import org.springframework.util.StringUtils;
 import com.mh.ta.core.annotation.InjectPageObject;
 import com.mh.ta.core.annotation.PageObject;
 
-public class PageObjectDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+public class PageObjectImport implements ImportBeanDefinitionRegistrar {
 	@Override
 	public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
 		Map<String, Object> attrs = metadata.getAnnotationAttributes(InjectPageObject.class.getName());
-		System.err.println(attrs);
-		String[] basePackages = (String[]) attrs.get("basePackages");
-		if (basePackages.length == 1 && StringUtils.isEmpty(basePackages[0])) {
-			String basePackage = ((StandardAnnotationMetadata) metadata).getIntrospectedClass().getPackage().getName();
-			System.err.println(basePackage);
-			basePackages = new String[] { basePackage };
-			System.err.println(basePackages);
+		String[] pageObjectPackageName = (String[]) attrs.get("pageObjectPackageName");
+		if (pageObjectPackageName.length == 1 && StringUtils.isEmpty(pageObjectPackageName[0])) {
+			String packageName = ((StandardAnnotationMetadata) metadata).getIntrospectedClass().getPackage().getName();
+			pageObjectPackageName = new String[] { packageName };
+
 		}
 
-		findPageObjectClasses(basePackages).forEach(beanDef -> {
+		findPageObjectClasses(pageObjectPackageName).forEach(pageObject -> {
 			// beanDef.setScope("test");
-			beanDef.setLazyInit(true);
-			registry.registerBeanDefinition(beanDef.getBeanClassName(), beanDef);
+			pageObject.setLazyInit(true);
+			registry.registerBeanDefinition(pageObject.getBeanClassName(), pageObject);
 		});
 	}
 
-	private Set<BeanDefinition> findPageObjectClasses(String... basePackages) {
+	private Set<BeanDefinition> findPageObjectClasses(String... pageObjectPackageName) {
 		ClassPathScanningCandidateComponentProvider scanner = new ClassPathScanningCandidateComponentProvider(false);
 		scanner.addIncludeFilter(new AnnotationTypeFilter(PageObject.class));
-
-		Set<BeanDefinition> beanDefs = new HashSet<>();
-
-		Stream.of(basePackages).forEach(basePackage -> beanDefs.addAll(scanner.findCandidateComponents(basePackage)));
-		System.err.println(beanDefs);
-		return beanDefs;
+		Set<BeanDefinition> pageObject = new HashSet<>();
+		Stream.of(pageObjectPackageName)
+				.forEach(basePackage -> pageObject.addAll(scanner.findCandidateComponents(basePackage)));
+		return pageObject;
 	}
 }
