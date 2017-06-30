@@ -8,7 +8,7 @@ import com.mh.ta.core.config.PageObjectImport;
 import com.mh.ta.core.config.TestRunningConfig;
 
 @SpringBootApplication
-@InjectPageObject
+@InjectPageObject(pageObjectPackageName={"com.mh.ta.home","com.mh.ta.annotation"})
 @Import({ TestRunningConfig.class, PageObjectImport.class })
 public class AppConfig {
 

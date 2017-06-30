@@ -20,6 +20,7 @@ import com.mh.ta.core.annotation.PageObject;
 public class PageObjectImport implements ImportBeanDefinitionRegistrar {
 	@Override
 	public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
+		System.err.println("Page Object import ");
 		Map<String, Object> attrs = metadata.getAnnotationAttributes(InjectPageObject.class.getName());
 		String[] pageObjectPackageName = (String[]) attrs.get("pageObjectPackageName");
 		if (pageObjectPackageName.length == 1 && StringUtils.isEmpty(pageObjectPackageName[0])) {
@@ -27,7 +28,6 @@ public class PageObjectImport implements ImportBeanDefinitionRegistrar {
 			pageObjectPackageName = new String[] { packageName };
 
 		}
-
 		findPageObjectClasses(pageObjectPackageName).forEach(pageObject -> {
 			// beanDef.setScope("test");
 			pageObject.setLazyInit(true);

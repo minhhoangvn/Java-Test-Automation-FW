@@ -14,11 +14,12 @@ import com.mh.ta.core.config.FrameworkSettings;
 @ContextConfiguration(classes = { AppConfig.class })
 public class TestPage {
 	@Autowired
-	private SamplePageA samplePageA;
+	private com.mh.ta.annotation.SamplePageD samplePageD1;
+
 
 	@Autowired
-	private SamplePageB samplePageB;
-
+	private com.mh.ta.home.SamplePageD samplePageD2;
+	
 	@Autowired
 	private FrameworkSettings setting;
 
@@ -28,14 +29,14 @@ public class TestPage {
 		System.err.println(setting.getDriverConfig());
 		System.err.println(setting.getSutConfig());
 		System.err.println("================================");
-		System.err.println("========== Page Object A=========");
-		samplePageA.showSetting();
-		System.err.println("Print number : " + samplePageA.getNumber());
+		System.err.println("========== Page Object annotation =========");
+		samplePageD1.showSetting();
+		System.err.println("Print number : " + samplePageD1.getNumber());
 		System.err.println("================================");
 
-		System.err.println("========== Page Object B=========");
-		samplePageB.showSetting();
-		System.err.println("Print number : " + samplePageB.getNumber());
+		System.err.println("========== Page Object home =========");
+		samplePageD2.showSetting();
+		System.err.println("Print number : " + samplePageD2.getNumber());
 		System.err.println("================================");
 
 	}

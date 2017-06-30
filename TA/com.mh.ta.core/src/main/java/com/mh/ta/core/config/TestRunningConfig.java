@@ -3,6 +3,7 @@ package com.mh.ta.core.config;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -15,6 +16,11 @@ public class TestRunningConfig {
 
 	@Autowired
 	public FrameworkSettings setting;
+
+	@Bean
+	public TAPostProcessor postProcessor(@Autowired ApplicationContext ctx) {
+		return new TAPostProcessor(ctx);
+	}
 
 	@Bean
 	public WebDriver webDriver() {
