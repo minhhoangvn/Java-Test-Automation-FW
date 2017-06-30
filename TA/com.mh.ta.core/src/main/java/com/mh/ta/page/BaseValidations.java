@@ -11,7 +11,7 @@ public class BaseValidations<E extends BaseElements> {
 
 	public BaseValidations(Class<E> element) {
 		System.err.println("Init In Base Validation ");
-		System.err.println(element);
+
 		this.driver = DriverFactory.getDriver();
 		this.elements = element;
 	}
@@ -21,7 +21,8 @@ public class BaseValidations<E extends BaseElements> {
 			return (E) this.elements.newInstance();
 		} catch (InstantiationException | IllegalAccessException e) {
 			throw new InstantiationPageObjectException(
-					String.format("Can not found page element with class name %s", this.elements.getName()));
+					String.format("Can not found page element with class name %s", this.elements.getName()), e, true,
+					true);
 		}
 	}
 

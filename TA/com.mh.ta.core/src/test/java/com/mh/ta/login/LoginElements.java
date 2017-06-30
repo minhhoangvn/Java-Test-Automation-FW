@@ -16,7 +16,7 @@ public class LoginElements extends BaseElements {
 	}
 
 	public WebElement txtPassword() {
-		return this.driver.findElement(By.id("Passwd"));
+		return super.findElementUntilVisible(By.name("password"), 30, 500);
 	}
 
 	public WebElement btnSignIn() {

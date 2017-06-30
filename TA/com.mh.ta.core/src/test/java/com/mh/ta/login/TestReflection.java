@@ -1,20 +1,29 @@
 package com.mh.ta.login;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.mh.ta.core.factory.DriverFactory;
+import com.mh.ta.core.factory.PageObjectFactory;
+
 public class TestReflection {
-	public TestReflection() {
-		System.out.println("Default constructor");
+	@Before
+	public void initDriver() {
+		DriverFactory.startDriver("");
 	}
 
-	public TestReflection(int a, long b) {
-		System.out.println("Two parameter constructor : int,long => " + a + ":" + b);
+	@Test
+	public void testPageFactory() {
+
+		LoginPage login = PageObjectFactory.getPageObject(LoginPage.class, LoginElements.class, LoginValidations.class);
+		login.goToLoginPage().inputEmail().clickNext().inputPassword();
+		System.err.println(login.Validations().shouldShowPassowdField());
+
 	}
 
-	public TestReflection(int a, long b, String c) {
-		System.out.println("Three parameter constructor : int,long,String => " + a + ":" + b + ":" + c);
+	@After
+	public void diposeDriver() {
+		DriverFactory.diposeDriver();
 	}
-
-	public TestReflection(String text, int count) {
-		System.out.println("Two parameter constructor : String, int => " + text + ":" + count );
-	}
-
 }

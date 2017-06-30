@@ -11,7 +11,7 @@ import com.mh.ta.core.factory.DriverFactory;
 public class TestLoginPOM {
 	@Before
 	public void initDriver() {
-		DriverFactory.startDriver("Start Chrome Driver");
+		//DriverFactory.startDriver("Start Chrome Driver");
 	}
 
 	@Test

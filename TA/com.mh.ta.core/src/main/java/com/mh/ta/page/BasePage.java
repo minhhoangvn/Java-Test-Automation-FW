@@ -23,7 +23,8 @@ public class BasePage<E extends BaseElements, V extends BaseValidations<E>> {
 			return (E) this.elements.newInstance();
 		} catch (InstantiationException | IllegalAccessException e) {
 			throw new InstantiationPageObjectException(
-					String.format("Can not found page element with class name %s", this.elements.getName()));
+					String.format("Can not found page element with class name %s", this.elements.getName()), e, true,
+					true);
 		}
 	}
 
@@ -34,7 +35,8 @@ public class BasePage<E extends BaseElements, V extends BaseValidations<E>> {
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 				| NoSuchMethodException | SecurityException e) {
 			throw new InstantiationPageObjectException(
-					String.format("Can not found page element with class name %s", this.valdidations.getName()));
+					String.format("Can not found page element with class name %s", this.valdidations.getName()), e,
+					true, true);
 		}
 	}
 }
