@@ -1,14 +1,16 @@
 package com.mh.ta.login;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+
+
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.mh.ta.core.factory.DriverFactory;
 import com.mh.ta.core.factory.PageObjectFactory;
 
 public class TestReflection {
-	@Before
+	@BeforeTest
 	public void initDriver() {
 		DriverFactory.startDriver("");
 	}
@@ -22,7 +24,7 @@ public class TestReflection {
 
 	}
 
-	@After
+	@AfterTest
 	public void diposeDriver() {
 		DriverFactory.diposeDriver();
 	}

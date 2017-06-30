@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4" started-at="2017-06-30T04:21:20Z" finished-at="2017-06-30T04:21:20Z">
+  <suite name="Default suite" duration-ms="4387" started-at="2017-06-30T16:30:04Z" finished-at="2017-06-30T16:30:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4" started-at="2017-06-30T04:21:20Z" finished-at="2017-06-30T04:21:20Z">
+    <test name="Default test" duration-ms="4387" started-at="2017-06-30T16:30:04Z" finished-at="2017-06-30T16:30:09Z">
+      <class name="com.mh.ta.login.TestReflection">
+        <test-method status="PASS" signature="initDriver()[pri:0, instance:com.mh.ta.login.TestReflection@4566e5bd]" name="initDriver" is-config="true" duration-ms="1368" started-at="2017-06-30T23:30:04Z" finished-at="2017-06-30T23:30:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method status="PASS" signature="testPageFactory()[pri:0, instance:com.mh.ta.login.TestReflection@4566e5bd]" name="testPageFactory" duration-ms="2933" started-at="2017-06-30T23:30:06Z" finished-at="2017-06-30T23:30:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPageFactory -->
+        <test-method status="PASS" signature="diposeDriver()[pri:0, instance:com.mh.ta.login.TestReflection@4566e5bd]" name="diposeDriver" is-config="true" duration-ms="73" started-at="2017-06-30T23:30:09Z" finished-at="2017-06-30T23:30:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diposeDriver -->
+      </class> <!-- com.mh.ta.login.TestReflection -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
