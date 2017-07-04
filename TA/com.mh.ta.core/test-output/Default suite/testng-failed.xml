@@ -3,18 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.mh.ta.core.TestSettingsConfig">
+      <class name="com.mh.ta.core.TestDriver">
         <methods>
-          <include name="springTestContextBeforeTestClass"/>
-          <include name="setUp"/>
-          <include name="springTestContextPrepareTestInstance"/>
-          <include name="springTestContextAfterTestClass"/>
-          <include name="springTestContextBeforeTestMethod"/>
-          <include name="testA"/>
-          <include name="clean"/>
-          <include name="springTestContextAfterTestMethod"/>
+          <include name="testFirefoxDriver"/>
+          <include name="testChromeDriver"/>
         </methods>
-      </class> <!-- com.mh.ta.core.TestSettingsConfig -->
+      </class> <!-- com.mh.ta.core.TestDriver -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

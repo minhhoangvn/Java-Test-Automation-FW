@@ -1,69 +1,55 @@
 package com.mh.ta.login;
 
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import com.mh.ta.core.factory.DriverFactory;
+import com.mh.ta.core.annotation.SampleMH;
 
 public class TestLoginPOM {
-	@Before
-	public void initDriver() {
-		//DriverFactory.startDriver("Start Chrome Driver");
-	}
-
-	@Test
-	public void testDemo() throws InstantiationException, IllegalAccessException, IllegalArgumentException,
-			InvocationTargetException, NoSuchMethodException, SecurityException, ClassNotFoundException {
-
-		/*
-		 * LoginPage login = new LoginPage(LoginElements::new, () -> new
-		 * LoginValidations(LoginElements::new)); login.goToLoginPage();
-		 * login.inputEmail(); login.clickNext(); Boolean check =
-		 * login.Validations().shouldShowPassowdField();
-		 * System.err.println("Test Login Check " + check);
-		 */
-		// Class cls = TestReflection.class;
-		// TestReflection s = (TestReflection) cls.getDeclaredConstructor(new
-		// Class[] { String.class, int.class })
-		// .newInstance("Test Minh Hoang", 69696);
-		LoginPage login = new LoginPage(LoginElements.class, LoginValidations.class);
-		System.err.println(login.goToLoginPage().inputEmail().clickNext().Validations().shouldShowPassowdField());
-		System.err.println(login.Validations().shouldShowPassowdField());
-
-	}
-
-	@After
-	public void diposeDriver() {
-		DriverFactory.diposeDriver();
+	public static void main(String[] args) throws IllegalAccessException, IllegalArgumentException,
+			InvocationTargetException, InstantiationException, NoSuchMethodException, SecurityException {
+		Class cls = Sample.class;
+		//Object obj = cls.getDeclaredConstructor((TestLoginPOM.class)).newInstance(TestLoginPOM.class.newInstance());
+		for (Method m : cls.getMethods()) {
+			SampleMH a = (SampleMH) m.getAnnotation(SampleMH.class);
+			System.err.println(m.getAnnotation(SampleMH.class));
+			if (a != null) {
+				System.err.println("=========================");
+				System.out.println(m.getName());
+				System.out.println(a.priority());
+				System.out.println(a.status());
+				System.out.println(a.configFileName());
+				System.err.println("=========================");
+				
+			} else {
+				System.out.println("Test Show Method Without annotations");
+				System.out.println(m.getName());
+			}
+		}
 	}
 
 	class Sample {
-		private String test;
-		private int count;
-
-		public Sample(String test, int count) {
-			this.test = test;
-			this.count = count;
+		public Sample() {
+			super();
 		}
 
-		protected String getTest() {
-			return test;
+		public void completedMethod() {
+			System.out.println("this is method complete");
 		}
 
-		protected void setTest(String test) {
-			this.test = test;
+		@SampleMH(priority = SampleMH.Priority.H)
+		public void notYetStarted() {
+
 		}
 
-		protected int getCount() {
-			return count;
+		@SampleMH(priority = SampleMH.Priority.H, status = SampleMH.Status.D)
+		public void DoneStarted() {
+
 		}
 
-		protected void setCount(int count) {
-			this.count = count;
-		}
+		@SampleMH(priority = SampleMH.Priority.H, status = SampleMH.Status.S)
+		public void notDoneStarted() {
 
+		}
 	}
 }

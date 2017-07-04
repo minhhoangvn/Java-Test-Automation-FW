@@ -2,24 +2,26 @@ package com.mh.ta.core.browsers;
 
 import java.util.stream.IntStream;
 
+import org.openqa.selenium.WebDriver;
+
 import com.mh.ta.core.helper.Constants;
 
 public enum BrowserType {
 
 	CHROME(
-			"CHROME"),
+			"CHROME", WebDriver.class),
 	FIREFOX(
-			"FIREFOX"),
+			"FIREFOX", WebDriver.class),
 	IE(
-		"IE"),
+		"IE", WebDriver.class),
 	EDGE(
-			"EDGE"),
+			"EDGE", WebDriver.class),
 	SAFARI(
-			"SAFARI");
+			"SAFARI", WebDriver.class);
 
 	private String value;
 
-	private BrowserType(String value) {
+	private BrowserType(String value, Class<?> browserClass) {
 		this.value = value;
 	}
 

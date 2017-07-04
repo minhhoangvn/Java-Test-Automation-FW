@@ -12,7 +12,7 @@ public class BaseValidations<E extends BaseElements> {
 	public BaseValidations(Class<E> element) {
 		System.err.println("Init In Base Validation ");
 
-		this.driver = DriverFactory.getDriver();
+		//this.driver = DriverFactory.getDriver();
 		this.elements = element;
 	}
 

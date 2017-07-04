@@ -1,6 +1,7 @@
 package com.mh.ta.core.driver;
 
 public interface Driver<Type> {
-	public Type startDriver();
+	public Type getDriver();
+	public void diposeDriver();
 
 }

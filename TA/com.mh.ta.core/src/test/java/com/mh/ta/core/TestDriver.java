@@ -1,29 +1,41 @@
 package com.mh.ta.core;
 
-import static org.junit.Assert.assertNotNull;
-
-import org.junit.After;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Guice;
+import org.testng.annotations.Test;
 
-import com.mh.ta.core.webdriver.ChromeBrowser;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
+import com.mh.ta.core.config.MainConfigModule;
+import com.mh.ta.core.driver.WebDrivers;
 
+@Guice(modules = { MainConfigModule.class })
 public class TestDriver {
-	private WebDriver driver = null;
+	@Inject
+	@Named("Firefox")
+	private WebDrivers firefox;
 
-	@After
-	public void closeDriver() {
-		if (driver != null)
-			driver.quit();
+	@Inject
+	@Named("Chrome")
+	private WebDrivers chrome;
+	// private WebDrivers driver;
+
+	@Test
+	public void testChromeDriver() {
+
+		WebDriver c = chrome.getDriver();
+		c.get("http://google.com");
+		System.err.println("Test Chrome Driver " + c.getCurrentUrl() + " title " + c.getTitle());
+		chrome.diposeDriver();
+		// driver.diposeDriver();
 	}
 
 	@Test
-	public void testInstanceDriver() {
-		ChromeBrowser chrome = new ChromeBrowser();
-		driver = chrome.startDriver();
-		assertNotNull(driver);
-
+	public void testFirefoxDriver() {
+		WebDriver c = firefox.getDriver();
+		c.get("http://google.com");
+		System.err.println("Test Firefox Driver " + c.getCurrentUrl() + " title " + c.getTitle());
+		firefox.diposeDriver();
 	}
+
 }

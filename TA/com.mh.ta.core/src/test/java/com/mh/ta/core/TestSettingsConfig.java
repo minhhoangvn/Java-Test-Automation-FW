@@ -1,46 +1,20 @@
 package com.mh.ta.core;
 
-import org.openqa.selenium.WebDriver;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
-import com.mh.ta.core.config.FrameworkSettings;
-import com.mh.ta.core.config.TestRunningConfig;
+import com.mh.ta.test.BaseTestNG;
 
-@ContextConfiguration(classes = TestRunningConfig.class)
-@SpringBootTest(classes = { TestSettingsConfig.class, FrameworkSettings.class })
-public class TestSettingsConfig extends AbstractTestNGSpringContextTests {
+public class TestSettingsConfig extends BaseTestNG{
 
-	@Autowired
-	private WebDriver webDriver;
+	
 
-	@Autowired
-	private FrameworkSettings setting;
 
-	private WebDriver driver = null;
-
-	@BeforeMethod
-	public void setUp() {
-		this.driver = webDriver;
-	}
 
 	@Test
-	public void testA() {
-		System.err.println(setting.getDriverConfig());
-		this.driver.get("http://www.google.com");
-
-	}
-
-	@AfterMethod
-	public void clean() {
-		this.driver.close();
-
+	public void testCanParseYaml() throws IOException {
+		System.err.println(this.driverConfig.getBrowser());
+		System.err.println(this.sutConfig.getBaseUri());
 	}
 }

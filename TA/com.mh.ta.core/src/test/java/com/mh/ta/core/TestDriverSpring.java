@@ -11,11 +11,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.mh.ta.core.config.FrameworkSettings;
-import com.mh.ta.core.config.TestRunningConfig;
+import com.mh.ta.core.config.TestRunningConfigModule;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ContextConfiguration(classes = TestRunningConfig.class)
+@ContextConfiguration(classes = TestRunningConfigModule.class)
 
 public class TestDriverSpring {
 

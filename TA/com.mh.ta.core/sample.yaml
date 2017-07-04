@@ -1,0 +1,10 @@
+name: Test MHTAFW
+parallel: methods
+configFailurePolicy: skip
+tests:
+  - name: DriverFactory
+    parallel: methods
+    groupByInstances: true
+    classes:
+      - com.mh.ta.guice.TestGuiceDriverFactory
+

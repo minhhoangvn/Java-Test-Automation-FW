@@ -7,11 +7,11 @@ import java.lang.annotation.Target;
 
 import org.springframework.context.annotation.Import;
 
-import com.mh.ta.core.config.TestRunningConfig;
+import com.mh.ta.core.config.TestRunningConfigModule;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Import({ TestRunningConfig.class })
+@Import({ TestRunningConfigModule.class })
 public @interface InjectPageObject {
 	String[] pageObjectPackageName() default "";
 }

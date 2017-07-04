@@ -1,12 +1,16 @@
-app:
-  sut-config:
-    base-uri: google.com/
-    username: none
-    password: none
-    pageload-timeout: 60
-  driver-config:
-    type: web
-    browser: chrome
-    implicit-wait: 30
-    hidden: false
-    maximize: true
+sutConfig:
+  baseUri: google.com/
+  username: none
+  password: none
+  databaseConnectionString: none
+  databaseUserName: none
+  databasePassword: none
+driverConfig:
+  driversFolderName: drivers
+  type: web
+  browser: firefox
+  implicitWait: 30
+  pageloadTimeout: 60
+  drivercommandTimeout: 60
+  hidden: false
+  maximize: true

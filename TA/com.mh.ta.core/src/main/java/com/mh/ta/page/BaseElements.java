@@ -18,7 +18,7 @@ public class BaseElements {
 	protected WebDriver driver;
 
 	public BaseElements() {
-		this.driver = DriverFactory.getDriver();
+		//this.driver = DriverFactory.getDriver();
 	}
 
 	public WebElement findElementUntilVisible(By by, long timeOut, long pollingTime) {

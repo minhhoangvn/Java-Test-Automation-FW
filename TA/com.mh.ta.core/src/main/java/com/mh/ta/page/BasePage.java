@@ -13,7 +13,7 @@ public class BasePage<E extends BaseElements, V extends BaseValidations<E>> {
 	private Class<V> valdidations;
 
 	public BasePage(Class<E> element, Class<V> validation) {
-		this.driver = DriverFactory.getDriver();
+		//this.driver = DriverFactory.getDriver();
 		this.elements = element;
 		this.valdidations = validation;
 	}
