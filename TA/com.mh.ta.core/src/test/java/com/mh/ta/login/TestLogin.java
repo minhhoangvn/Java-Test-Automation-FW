@@ -10,7 +10,6 @@ import com.mh.ta.test.BaseTestNG;
 public class TestLogin extends BaseTestNG {
 	@Test
 	public void testLogin() {
-		this.driverFactory.createDriverManager(Browser.CHROME);
 		this.inject = InjectorInitializer.injectWebDriver(this.inject,
 				this.driverFactory.getDriverManager(Browser.CHROME).getDriver());
 		LoginPage login = PageObjectFactory.initPageObject(this.inject, LoginPage.class);
