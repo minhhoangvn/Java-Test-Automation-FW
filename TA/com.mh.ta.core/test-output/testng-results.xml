@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9950" started-at="2017-07-04T07:25:23Z" finished-at="2017-07-04T07:25:33Z">
+  <suite name="Default suite" duration-ms="4100" started-at="2017-07-08T13:36:50Z" finished-at="2017-07-08T13:36:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9950" started-at="2017-07-04T07:25:23Z" finished-at="2017-07-04T07:25:33Z">
-      <class name="com.mh.ta.core.TestDriver">
-        <test-method status="PASS" signature="testChromeDriver()[pri:0, instance:com.mh.ta.core.TestDriver@6221a451]" name="testChromeDriver" duration-ms="4319" started-at="2017-07-04T14:25:23Z" finished-at="2017-07-04T14:25:28Z">
+    <test name="Default test" duration-ms="4100" started-at="2017-07-08T13:36:50Z" finished-at="2017-07-08T13:36:54Z">
+      <class name="com.mh.ta.login.TestLogin">
+        <test-method status="PASS" signature="testLogin()[pri:0, instance:com.mh.ta.login.TestLogin@28261e8e]" name="testLogin" duration-ms="4084" started-at="2017-07-08T20:36:50Z" finished-at="2017-07-08T20:36:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testChromeDriver -->
-        <test-method status="PASS" signature="testFirefoxDriver()[pri:0, instance:com.mh.ta.core.TestDriver@6221a451]" name="testFirefoxDriver" duration-ms="5602" started-at="2017-07-04T14:25:28Z" finished-at="2017-07-04T14:25:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFirefoxDriver -->
-      </class> <!-- com.mh.ta.core.TestDriver -->
+        </test-method> <!-- testLogin -->
+      </class> <!-- com.mh.ta.login.TestLogin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

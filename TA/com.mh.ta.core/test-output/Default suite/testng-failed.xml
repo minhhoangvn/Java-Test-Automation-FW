@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.mh.ta.core.TestDriver">
+      <class name="com.mh.ta.test.webbrowser.TestGeneric">
         <methods>
-          <include name="testFirefoxDriver"/>
-          <include name="testChromeDriver"/>
+          <include name="testGeneric"/>
         </methods>
-      </class> <!-- com.mh.ta.core.TestDriver -->
+      </class> <!-- com.mh.ta.test.webbrowser.TestGeneric -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

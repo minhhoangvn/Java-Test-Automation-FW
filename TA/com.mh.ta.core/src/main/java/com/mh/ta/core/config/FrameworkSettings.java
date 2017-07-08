@@ -1,5 +1,8 @@
 package com.mh.ta.core.config;
 
+import com.mh.ta.core.annotation.Settings;
+
+@Settings(configFileName="application")
 public class FrameworkSettings {
 
 	private SUTConfig sutConfig;
@@ -23,6 +26,7 @@ public class FrameworkSettings {
 
 	public static class DriverConfig {
 		private String type, browser, driversFolderName;
+		private int implicitWait = 60, pageloadTimeout = 60, drivercommandTimeout = 60;
 
 		public String getDriversFolderName() {
 			return driversFolderName;
@@ -31,8 +35,6 @@ public class FrameworkSettings {
 		public void setDriversFolderName(String driverFolderName) {
 			this.driversFolderName = driverFolderName;
 		}
-
-		private int implicitWait = 60, pageloadTimeout = 60, drivercommandTimeout = 60;
 
 		public String getType() {
 			return type;

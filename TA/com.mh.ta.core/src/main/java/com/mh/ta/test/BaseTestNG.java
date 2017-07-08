@@ -2,22 +2,19 @@ package com.mh.ta.test;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.mh.ta.core.config.FrameworkSettings;
-import com.mh.ta.core.config.MainConfig;
-import com.mh.ta.guice.MainModule;
+import com.mh.ta.core.config.MainModule;
+import com.mh.ta.core.factory.WebDriverFactory;
 
 public abstract class BaseTestNG {
-	protected FrameworkSettings.DriverConfig driverConfig;
-	protected FrameworkSettings.SUTConfig sutConfig;
+	protected Injector inject;
+	protected WebDriverFactory driverFactory;
 
 	public BaseTestNG() {
 		this.initConfig();
 	}
 
 	private void initConfig() {
-		Injector injector = Guice.createInjector(new MainModule());
-		MainConfig config = injector.getInstance(MainConfig.class);
-		this.sutConfig = config.getSUTConfig();
-		this.driverConfig = config.getDriverConfig();
+		this.inject = Guice.createInjector(new MainModule());
+		this.driverFactory = inject.getInstance(WebDriverFactory.class);
 	}
 }

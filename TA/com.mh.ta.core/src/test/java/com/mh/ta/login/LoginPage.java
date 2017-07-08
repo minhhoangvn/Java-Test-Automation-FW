@@ -1,11 +1,15 @@
 package com.mh.ta.login;
 
+import org.openqa.selenium.WebDriver;
+
+import com.google.inject.Inject;
 import com.mh.ta.page.BasePage;
 
 public class LoginPage extends BasePage<LoginElements, LoginValidations> {
-
-	public LoginPage(Class<LoginElements> element, Class<LoginValidations> validation) {
-		super(element, validation);
+	
+	@Inject
+	public LoginPage(WebDriver driver) {
+		super(driver);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -29,4 +33,7 @@ public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 		return this;
 	}
 
+	public String testElementPage() {
+		return this.Elements().txtSampleForm();
+	}
 }

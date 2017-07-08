@@ -12,13 +12,15 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.mh.ta.core.factory.DriverFactory;
+import com.google.inject.Inject;
 
 public class BaseElements {
+
 	protected WebDriver driver;
 
-	public BaseElements() {
-		//this.driver = DriverFactory.getDriver();
+	@Inject
+	public BaseElements(WebDriver driver) {
+		this.driver = driver;
 	}
 
 	public WebElement findElementUntilVisible(By by, long timeOut, long pollingTime) {
@@ -26,7 +28,7 @@ public class BaseElements {
 				.pollingEvery(pollingTime, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class, WebDriverException.class);
 		return wait.until((driver) -> {
-			WebDriverWait explicit = new WebDriverWait(driver,timeOut);
+			WebDriverWait explicit = new WebDriverWait(driver, timeOut);
 			return explicit.until(ExpectedConditions.visibilityOfElementLocated(by));
 		});
 	}

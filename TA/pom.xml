@@ -20,6 +20,7 @@
 	
 	<modules>
 		<module>com.mh.ta.core</module>
+		<module>com.mh.ta</module>
 	</modules>
 	
 	<properties>
@@ -32,6 +33,7 @@
 	    <appium.version>5.0.0-BETA9</appium.version>
 	    <testng.version>6.11</testng.version>
 	    <guice.version>4.1.0</guice.version>
+	    <guicemultibinding.version>4.1.0</guicemultibinding.version>
 	    <snakeyaml.version>1.18</snakeyaml.version>
 	</properties>	
 	
