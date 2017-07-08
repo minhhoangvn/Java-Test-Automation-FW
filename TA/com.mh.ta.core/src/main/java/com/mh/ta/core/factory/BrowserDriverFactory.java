@@ -1,50 +1,46 @@
 package com.mh.ta.core.factory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
+import com.google.inject.Inject;
 import com.mh.ta.core.browsers.Browser;
-import com.mh.ta.core.config.MainModule;
 import com.mh.ta.core.driver.BrowserDriver;
 
-public class BrowserDriverFactory {
-	private static BrowserDriverFactory instance;
-	private Injector inject;
-	private ThreadLocal<BrowserDriver> browserManager = new ThreadLocal<BrowserDriver>();
+public class BrowserDriverFactory implements DriverFactory<BrowserDriver, WebDriver, Browser> {
+	final Map<Browser, BrowserDriver> browserManagerBinder;
 
-	private BrowserDriverFactory() {
-	};
-
-	public static BrowserDriverFactory instance() {
-		if (instance == null) {
-			synchronized (BrowserDriverFactory.class) {
-				if (instance == null) {
-					instance = new BrowserDriverFactory();
-					instance.inject = Guice.createInjector(new MainModule());
-				}
+	public BrowserDriverFactory() {
+		try {
+			browserManagerBinder = new HashMap<Browser, BrowserDriver>();
+			Browser[] browsers = Browser.values();
+			for (Browser browser : browsers) {
+				Class<?> cls = Browser.getBrowserClass(browser.toString());
+				BrowserDriver driverManager = (BrowserDriver) cls.newInstance();
+				this.browserManagerBinder.put(browser, driverManager);
 			}
+		} catch (Exception e) {
+			throw new RuntimeException("Error in init BrowserDriverFactory " + e);
 		}
-		return instance;
 	}
 
-	public BrowserDriver getDriverManager(String type) {
-		return initDriverManager(type);
+	@Inject
+	public BrowserDriverFactory(Map<Browser, BrowserDriver> mapBinder) {
+		this.browserManagerBinder = mapBinder;
 	}
 
-	public WebDriver getDriver() {
-		return instance.browserManager.get().getDriver();
+	@Override
+	public WebDriver getDriver(Browser type) {
+		WebDriver driver = this.browserManagerBinder.get(type).getDriver();
+		return driver;
 	}
 
-	public void removeDriverManager(String type) {
-		instance.browserManager.remove();
+	@Override
+	public BrowserDriver getDriverManager(Browser type) {
+		BrowserDriver driverManager = this.browserManagerBinder.get(type);
+		return driverManager;
 	}
 
-	private BrowserDriver initDriverManager(String type) {
-		if (browserManager.get() == null) {
-			Class<?> browserClass = Browser.getBrowserClass(type);
-			browserManager.set((BrowserDriver) instance.inject.getInstance(browserClass));
-		}
-		return browserManager.get();
-	}
 }

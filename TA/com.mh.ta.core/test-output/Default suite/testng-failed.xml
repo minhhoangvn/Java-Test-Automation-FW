@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.mh.ta.test.webbrowser.TestGeneric">
+      <class name="com.mh.ta.login.TestLogin">
         <methods>
-          <include name="testGeneric"/>
+          <include name="testLogin2"/>
         </methods>
-      </class> <!-- com.mh.ta.test.webbrowser.TestGeneric -->
+      </class> <!-- com.mh.ta.login.TestLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

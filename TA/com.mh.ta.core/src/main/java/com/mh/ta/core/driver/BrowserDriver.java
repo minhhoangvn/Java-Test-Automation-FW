@@ -6,6 +6,7 @@ import java.util.function.Function;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
@@ -28,11 +29,13 @@ public abstract class BrowserDriver implements Driver<WebDriver> {
 
 	@Override
 	public WebDriver getDriver() {
-		if (drivers.get() == null)
+		if (drivers.get() == null || this.reInitDriver()) {
 			synchronized (this) {
-				if (drivers.get() == null)
+				if (drivers.get() == null || this.reInitDriver())
 					createDriver();
 			}
+		}
+		System.err.println("SessionId driver " + ((RemoteWebDriver) drivers.get()).getSessionId());
 		return drivers.get();
 	}
 
@@ -43,7 +46,6 @@ public abstract class BrowserDriver implements Driver<WebDriver> {
 			driver.quit();
 		}
 		drivers.remove();
-
 	}
 
 	Consumer<WebDriver> maximizeBrowser = (driver) -> {
@@ -68,4 +70,12 @@ public abstract class BrowserDriver implements Driver<WebDriver> {
 		return driver;
 	};
 
+	private Boolean reInitDriver() {
+		if (drivers.get() == null)
+			return false;
+		else {
+			RemoteWebDriver driver = (RemoteWebDriver) drivers.get();
+			return driver.getSessionId() == null;
+		}
+	}
 }

@@ -3,18 +3,14 @@ package com.mh.ta.test;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.mh.ta.core.config.MainModule;
-import com.mh.ta.core.factory.WebDriverFactory;
+import com.mh.ta.core.factory.BrowserDriverFactory;
 
 public abstract class BaseTestNG {
-	protected Injector inject;
-	protected WebDriverFactory driverFactory;
+	protected final Injector inject;
+	protected final BrowserDriverFactory driverFactory;
 
 	public BaseTestNG() {
-		this.initConfig();
-	}
-
-	private void initConfig() {
 		this.inject = Guice.createInjector(new MainModule());
-		this.driverFactory = inject.getInstance(WebDriverFactory.class);
+		this.driverFactory = inject.getInstance(BrowserDriverFactory.class);
 	}
 }
