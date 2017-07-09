@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24" started-at="2017-07-08T17:40:34Z" finished-at="2017-07-08T17:40:34Z">
+  <suite name="Test MHTAFW" duration-ms="5916" started-at="2017-07-09T03:23:52Z" finished-at="2017-07-09T03:23:58Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24" started-at="2017-07-08T17:40:34Z" finished-at="2017-07-08T17:40:34Z">
+    <test name="DriverFactory" duration-ms="5916" started-at="2017-07-09T03:23:52Z" finished-at="2017-07-09T03:23:58Z">
       <class name="com.mh.ta.login.TestLogin">
-        <test-method status="PASS" signature="testLogin3()[pri:0, instance:com.mh.ta.login.TestLogin@28261e8e]" name="testLogin3" duration-ms="10" started-at="2017-07-09T00:40:34Z" finished-at="2017-07-09T00:40:34Z">
+        <test-method status="PASS" signature="testLogin1()[pri:0, instance:com.mh.ta.login.TestLogin@273444fe]" name="testLogin1" duration-ms="4124" started-at="2017-07-09T10:23:52Z" finished-at="2017-07-09T10:23:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin3 -->
+        </test-method> <!-- testLogin1 -->
+        <test-method status="PASS" signature="testLogin2()[pri:0, instance:com.mh.ta.login.TestLogin@273444fe]" name="testLogin2" duration-ms="5899" started-at="2017-07-09T10:23:52Z" finished-at="2017-07-09T10:23:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin2 -->
       </class> <!-- com.mh.ta.login.TestLogin -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- DriverFactory -->
+  </suite> <!-- Test MHTAFW -->
 </testng-results>

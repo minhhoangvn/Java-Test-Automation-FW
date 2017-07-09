@@ -35,7 +35,6 @@ public abstract class BrowserDriver implements Driver<WebDriver> {
 					createDriver();
 			}
 		}
-		System.err.println("SessionId driver " + ((RemoteWebDriver) drivers.get()).getSessionId());
 		return drivers.get();
 	}
 

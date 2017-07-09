@@ -13,4 +13,4 @@ driverConfig:
   pageloadTimeout: 60
   drivercommandTimeout: 60
   hidden: false
-  maximize: true
+  maximize: false
