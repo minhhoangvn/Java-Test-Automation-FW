@@ -1,8 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Test MHTAFW" parallel="methods" thread-count="5">
-  <test name="DriverFactory" group-by-instances="true">
+<suite name="Test" parallel="tests" thread-count="10">
+  <test name="ClassA">
 <classes>
-  <class name="com.mh.ta.login.TestLogin" />
+  <class name="com.mh.ta.utils.TestA" />
+ </classes>
+</test>
+<test name="ClassB">
+<classes>
+  <class name="com.mh.ta.utils.TestB" />
  </classes>
 </test>
 </suite>

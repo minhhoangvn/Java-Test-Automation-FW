@@ -6,12 +6,12 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.mh.ta.core.browsers.Browser;
 import com.mh.ta.core.config.MainModule;
-import com.mh.ta.core.driver.BrowserDriver;
+import com.mh.ta.core.driver.BrowserDriverManager;
 
 public class BrowserDriverFactoryStatic {
 	private static BrowserDriverFactoryStatic instance;
 	private Injector inject;
-	private ThreadLocal<BrowserDriver> browserManager = new ThreadLocal<BrowserDriver>();
+	private ThreadLocal<BrowserDriverManager> browserManager = new ThreadLocal<BrowserDriverManager>();
 
 	private BrowserDriverFactoryStatic() {
 	};
@@ -28,7 +28,7 @@ public class BrowserDriverFactoryStatic {
 		return instance;
 	}
 
-	public BrowserDriver getDriverManager(String type) {
+	public BrowserDriverManager getDriverManager(String type) {
 		return initDriverManager(type);
 	}
 
@@ -40,10 +40,10 @@ public class BrowserDriverFactoryStatic {
 		instance.browserManager.remove();
 	}
 
-	private BrowserDriver initDriverManager(String type) {
+	private BrowserDriverManager initDriverManager(String type) {
 		if (browserManager.get() == null) {
 			Class<?> browserClass = Browser.getBrowserClass(type);
-			browserManager.set((BrowserDriver) instance.inject.getInstance(browserClass));
+			browserManager.set((BrowserDriverManager) instance.inject.getInstance(browserClass));
 		}
 		return browserManager.get();
 	}

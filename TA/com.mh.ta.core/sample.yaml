@@ -6,5 +6,5 @@ tests:
     parallel: methods
     groupByInstances: true
     classes:
-      - com.mh.ta.login.TestLogin
+      - com.mh.ta.utils.TestDataProvider
 

@@ -12,7 +12,7 @@ import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import com.mh.ta.core.config.FrameworkSettings;
 
-public abstract class BrowserDriver implements Driver<WebDriver> {
+public abstract class BrowserDriverManager implements DriverManager<WebDriver> {
 	@Inject
 	@Named("driver-config")
 	private FrameworkSettings.DriverConfig config;

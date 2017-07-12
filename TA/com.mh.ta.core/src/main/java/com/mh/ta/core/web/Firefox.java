@@ -10,9 +10,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import com.mh.ta.core.driver.BrowserDriver;
+import com.mh.ta.core.driver.BrowserDriverManager;
 
-public class Firefox extends BrowserDriver {
+public class Firefox extends BrowserDriverManager {
 
 	private DesiredCapabilities capabilities = firefox();
 	private FirefoxProfile profile = generateFirefoxProfile.get();

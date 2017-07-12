@@ -7,18 +7,18 @@ import org.openqa.selenium.WebDriver;
 
 import com.google.inject.Inject;
 import com.mh.ta.core.browsers.Browser;
-import com.mh.ta.core.driver.BrowserDriver;
+import com.mh.ta.core.driver.BrowserDriverManager;
 
-public class BrowserDriverFactory implements DriverFactory<BrowserDriver, WebDriver, Browser> {
-	final Map<Browser, BrowserDriver> browserManagerBinder;
+public class BrowserDriverManagerFactory implements DriverManagerFactory<BrowserDriverManager, WebDriver, Browser> {
+	final Map<Browser, BrowserDriverManager> browserManagerBinder;
 
-	public BrowserDriverFactory() {
+	public BrowserDriverManagerFactory() {
 		try {
-			browserManagerBinder = new HashMap<Browser, BrowserDriver>();
+			browserManagerBinder = new HashMap<Browser, BrowserDriverManager>();
 			Browser[] browsers = Browser.values();
 			for (Browser browser : browsers) {
 				Class<?> cls = Browser.getBrowserClass(browser.toString());
-				BrowserDriver driverManager = (BrowserDriver) cls.newInstance();
+				BrowserDriverManager driverManager = (BrowserDriverManager) cls.newInstance();
 				this.browserManagerBinder.put(browser, driverManager);
 			}
 		} catch (Exception e) {
@@ -27,7 +27,7 @@ public class BrowserDriverFactory implements DriverFactory<BrowserDriver, WebDri
 	}
 
 	@Inject
-	public BrowserDriverFactory(Map<Browser, BrowserDriver> mapBinder) {
+	public BrowserDriverManagerFactory(Map<Browser, BrowserDriverManager> mapBinder) {
 		this.browserManagerBinder = mapBinder;
 	}
 
@@ -38,8 +38,8 @@ public class BrowserDriverFactory implements DriverFactory<BrowserDriver, WebDri
 	}
 
 	@Override
-	public BrowserDriver getDriverManager(Browser type) {
-		BrowserDriver driverManager = this.browserManagerBinder.get(type);
+	public BrowserDriverManager getDriverManager(Browser type) {
+		BrowserDriverManager driverManager = this.browserManagerBinder.get(type);
 		return driverManager;
 	}
 

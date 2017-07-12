@@ -7,9 +7,9 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.internal.ElementScrollBehavior;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import com.mh.ta.core.driver.BrowserDriver;
+import com.mh.ta.core.driver.BrowserDriverManager;
 
-public class IE extends BrowserDriver {
+public class IE extends BrowserDriverManager {
 	private DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 	private InternetExplorerOptions options = generateChromeOptions.get();
 	private static Supplier<InternetExplorerOptions> generateChromeOptions = () -> {

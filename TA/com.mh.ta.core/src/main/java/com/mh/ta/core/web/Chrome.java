@@ -6,9 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import com.mh.ta.core.driver.BrowserDriver;
+import com.mh.ta.core.driver.BrowserDriverManager;
 
-public class Chrome extends BrowserDriver {
+public class Chrome extends BrowserDriverManager {
 
 	private ChromeOptions options = new ChromeOptions();
 	private DesiredCapabilities capabilities = chrome();
