@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.mh.ta.utils.TestDepend">
+      <class name="com.mh.ta.login.TestLogin">
         <methods>
-          <include name="testMessage"/>
-          <include name="sendMessage"/>
+          <include name="initPOM"/>
+          <include name="diposeDriver"/>
+          <include name="testLogin1"/>
         </methods>
-      </class> <!-- com.mh.ta.utils.TestDepend -->
+      </class> <!-- com.mh.ta.login.TestLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

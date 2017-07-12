@@ -3,14 +3,16 @@ package com.mh.ta.login;
 import org.openqa.selenium.WebDriver;
 
 import com.google.inject.Inject;
+import com.mh.ta.keywords.WebKeywords;
 import com.mh.ta.page.BasePage;
 
 public class LoginPage extends BasePage<LoginElements, LoginValidations> {
-	
+	private WebKeywords keywords;
+
 	@Inject
-	public LoginPage(WebDriver driver) {
+	public LoginPage(WebDriver driver, WebKeywords keywords) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		this.keywords = keywords;
 	}
 
 	public LoginPage goToLoginPage() {
@@ -35,5 +37,9 @@ public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 
 	public String testElementPage() {
 		return this.Elements().txtSampleForm();
+	}
+
+	public void printTitle() {
+		this.keywords.printTitle();
 	}
 }

@@ -6,10 +6,4 @@
 			<class name="com.mh.ta.login.TestLogin" />
 		</classes>
 	</test>
-	<test name="LOGIN FIREFOX">
-		<parameter name="browser" value="firefox" />
-		<classes>
-			<class name="com.mh.ta.login.TestLogin" />
-		</classes>
-	</test>
 </suite>
