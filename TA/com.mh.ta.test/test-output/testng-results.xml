@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="LoginDemo" duration-ms="4459" started-at="2017-07-31T16:06:07Z" finished-at="2017-07-31T16:06:12Z">
+    <groups>
+    </groups>
+    <test name="LOGIN CHROME" duration-ms="4459" started-at="2017-07-31T16:06:07Z" finished-at="2017-07-31T16:06:12Z">
+      <class name="com.mh.ta.test.TestLogin">
+        <test-method status="PASS" signature="initPOM(java.lang.String)[pri:0, instance:com.mh.ta.test.TestLogin@304bb45b]" name="initPOM" is-config="true" duration-ms="2337" started-at="2017-07-31T23:06:07Z" finished-at="2017-07-31T23:06:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPOM -->
+        <test-method status="PASS" signature="testLogin1()[pri:0, instance:com.mh.ta.test.TestLogin@304bb45b]" name="testLogin1" duration-ms="1199" started-at="2017-07-31T23:06:10Z" finished-at="2017-07-31T23:06:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin1 -->
+        <test-method status="PASS" signature="diposeDriver()[pri:0, instance:com.mh.ta.test.TestLogin@304bb45b]" name="diposeDriver" is-config="true" duration-ms="913" started-at="2017-07-31T23:06:11Z" finished-at="2017-07-31T23:06:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diposeDriver -->
+      </class> <!-- com.mh.ta.test.TestLogin -->
+    </test> <!-- LOGIN CHROME -->
+  </suite> <!-- LoginDemo -->
+</testng-results>

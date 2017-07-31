@@ -9,5 +9,5 @@ import java.lang.annotation.Target;
 @Target({ TYPE })
 public @interface Settings {
 	String configFolderName() default ""; 
-	String configFileName() default "application.yml";
+	String configFileName() default "application";
 }

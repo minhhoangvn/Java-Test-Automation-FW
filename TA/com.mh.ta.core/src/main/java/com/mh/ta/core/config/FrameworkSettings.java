@@ -1,12 +1,10 @@
 package com.mh.ta.core.config;
 
-import com.mh.ta.core.annotation.Settings;
-
-@Settings(configFileName="application")
 public class FrameworkSettings {
 
 	private SUTConfig sutConfig;
 	private DriverConfig driverConfig;
+	private DatabaseConfig databaseConfig;
 
 	public SUTConfig getSutConfig() {
 		return sutConfig;
@@ -22,6 +20,14 @@ public class FrameworkSettings {
 
 	public void setDriverConfig(DriverConfig driverConfig) {
 		this.driverConfig = driverConfig;
+	}
+
+	public DatabaseConfig getDatabaseConfig() {
+		return databaseConfig;
+	}
+
+	public void setDatabaseConfig(DatabaseConfig databaseConfig) {
+		this.databaseConfig = databaseConfig;
 	}
 
 	public static class DriverConfig {
@@ -96,34 +102,10 @@ public class FrameworkSettings {
 	}
 
 	public static class SUTConfig {
-		private String baseUri, username, password, databaseConnectionString, databaseUserName, databasePassword;
+		private String baseUri, username, password;
 
 		public String getBaseUri() {
 			return baseUri;
-		}
-
-		public String getDatabaseConnectionString() {
-			return databaseConnectionString;
-		}
-
-		public void setDatabaseConnectionString(String databaseConnectionString) {
-			this.databaseConnectionString = databaseConnectionString;
-		}
-
-		public String getDatabaseUserName() {
-			return databaseUserName;
-		}
-
-		public void setDatabaseUserName(String databaseUserName) {
-			this.databaseUserName = databaseUserName;
-		}
-
-		protected String getDatabasePassword() {
-			return databasePassword;
-		}
-
-		public void setDatabasePassword(String databasePassword) {
-			this.databasePassword = databasePassword;
 		}
 
 		public void setBaseUri(String baseUri) {
@@ -144,6 +126,42 @@ public class FrameworkSettings {
 
 		public void setPassword(String password) {
 			this.password = password;
+		}
+	}
+
+	public static class DatabaseConfig {
+		private String databaseDriver, databaseConnectionString, databaseUserName, databasePassword;
+
+		public String getDatabaseDriver() {
+			return databaseDriver;
+		}
+
+		public void setDatabaseDriver(String databaseDriver) {
+			this.databaseDriver = databaseDriver;
+		}
+
+		public String getDatabaseConnectionString() {
+			return databaseConnectionString;
+		}
+
+		public void setDatabaseConnectionString(String databaseConnectionString) {
+			this.databaseConnectionString = databaseConnectionString;
+		}
+
+		public String getDatabaseUserName() {
+			return databaseUserName;
+		}
+
+		public void setDatabaseUserName(String databaseUserName) {
+			this.databaseUserName = databaseUserName;
+		}
+
+		public String getDatabasePassword() {
+			return databasePassword;
+		}
+
+		public void setDatabasePassword(String databasePassword) {
+			this.databasePassword = databasePassword;
 		}
 	}
 }

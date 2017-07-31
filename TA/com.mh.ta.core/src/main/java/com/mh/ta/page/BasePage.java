@@ -8,15 +8,18 @@ import com.google.inject.Inject;
 import com.mh.ta.core.exception.InstantiationPageObjectException;
 import com.mh.ta.core.helper.ClassInitializer;
 import com.mh.ta.core.helper.Constant;
+import com.mh.ta.keywords.Keywords;
 
 public class BasePage<E extends BaseElements, V extends BaseValidations<E>> {
 	protected WebDriver driver;
+	protected Keywords<?, ?> keyword;
 	private Class<?> elements;
 	private Class<?> valdidations;
 
 	@Inject
-	public BasePage(WebDriver driver) {
+	public BasePage(WebDriver driver, Keywords<?, ?> kw) {
 		this.driver = driver;
+		this.keyword = kw;
 		this.initPageClass();
 	}
 

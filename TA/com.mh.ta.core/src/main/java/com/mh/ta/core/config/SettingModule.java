@@ -13,10 +13,14 @@ import org.yaml.snakeyaml.Yaml;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
-import com.mh.ta.core.annotation.Settings;
 
 public class SettingModule extends AbstractModule {
 	private final List<String> configExtensionType = Arrays.asList("yml", "yaml");
+	private final String settingFileName;
+
+	public SettingModule(String settingPath) {
+		this.settingFileName = settingPath;
+	}
 
 	@Override
 	protected void configure() {
@@ -25,6 +29,8 @@ public class SettingModule extends AbstractModule {
 				.toInstance(this.settings().getDriverConfig());
 		bind(FrameworkSettings.SUTConfig.class).annotatedWith(Names.named("sut-config"))
 				.toInstance(this.settings().getSutConfig());
+		bind(FrameworkSettings.DatabaseConfig.class).annotatedWith(Names.named("database-config"))
+				.toInstance(this.settings().getDatabaseConfig());
 	}
 
 	private FrameworkSettings settings() {
@@ -45,23 +51,18 @@ public class SettingModule extends AbstractModule {
 		yamlPaths = Files
 				.find(FileSystems.getDefault().getPath(System.getProperty("user.dir")).getParent(), 20,
 						(filePath, attribute) -> this.isAppilicationConfigFile(filePath,
-								this.getAnnotationSettingValue().get(0), this.getAnnotationSettingValue().get(1)))
+								this.settingFileName))
 				.collect(Collectors.toList());
 		return yamlPaths.get(0);
 
 	}
 
-	private Boolean isAppilicationConfigFile(Path filePath, String fileName, String folderName) {
-		Boolean isCorrectFolder = filePath.toString().toLowerCase().contains(folderName) || folderName.length() == 0;
+	private Boolean isAppilicationConfigFile(Path filePath, String fileName) {		
 		Boolean isCorrectFileName = filePath.getFileName().toString().contains(fileName);
 		Boolean isCorrectExtensionType = filePath.toString().toLowerCase().endsWith(configExtensionType.get(0))
 				|| filePath.toString().toLowerCase().endsWith(configExtensionType.get(1));
-		return isCorrectFolder && isCorrectFileName && isCorrectExtensionType;
+		return isCorrectFileName && isCorrectExtensionType;
 	}
 
-	private List<String> getAnnotationSettingValue() {
-		Class<FrameworkSettings> cls = FrameworkSettings.class;
-		Settings settingAnnotation = cls.getAnnotation(Settings.class);
-		return Arrays.asList(settingAnnotation.configFileName(), settingAnnotation.configFolderName());
-	}
+
 }

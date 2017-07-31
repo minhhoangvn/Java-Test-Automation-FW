@@ -1,4 +1,4 @@
-package com.mh.ta.login;
+package com.mh.ta.test.pages;
 
 import org.openqa.selenium.WebDriver;
 
@@ -7,12 +7,11 @@ import com.mh.ta.keywords.WebKeywords;
 import com.mh.ta.page.BasePage;
 
 public class LoginPage extends BasePage<LoginElements, LoginValidations> {
-	private WebKeywords keywords;
+	
 
 	@Inject
 	public LoginPage(WebDriver driver, WebKeywords keywords) {
-		super(driver);
-		this.keywords = keywords;
+		super(driver,keywords);
 	}
 
 	public LoginPage goToLoginPage() {
@@ -40,6 +39,6 @@ public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 	}
 
 	public void printTitle() {
-		this.keywords.printTitle();
+		this.keyword.printTitle();
 	}
 }

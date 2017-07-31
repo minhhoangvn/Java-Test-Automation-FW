@@ -21,6 +21,7 @@
 	<modules>
 		<module>com.mh.ta.core</module>
 		<module>com.mh.ta</module>
+		<module>com.mh.ta.test</module>
 	</modules>
 	
 	<properties>

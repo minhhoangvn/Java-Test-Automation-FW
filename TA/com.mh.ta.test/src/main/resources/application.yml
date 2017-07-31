@@ -1,10 +1,7 @@
 sutConfig:
   baseUri: google.com/
   username: none
-  password: none
-  databaseConnectionString: none
-  databaseUserName: none
-  databasePassword: none
+  password: none  
 driverConfig:
   driversFolderName: drivers
   type: web
@@ -14,3 +11,8 @@ driverConfig:
   drivercommandTimeout: 60
   hidden: false
   maximize: false
+databaseConfig:
+  databaseDriver: none
+  databaseConnectionString: none
+  databaseUserName: none
+  databasePassword: none

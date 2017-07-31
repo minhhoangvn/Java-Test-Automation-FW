@@ -11,7 +11,8 @@ public class WebKeywords extends Keywords<WebDriver, WebElement> {
 	public WebKeywords(WebDriver type) {
 		super(type);
 	}
-
+	
+	@Override
 	public void printTitle() {
 		System.err.println(this.driver.getTitle());
 	}

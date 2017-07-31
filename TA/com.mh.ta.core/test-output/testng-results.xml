@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="LoginDemo" duration-ms="9072" started-at="2017-07-12T04:14:51Z" finished-at="2017-07-12T04:15:00Z">
+  <suite name="LoginDemo" duration-ms="4401" started-at="2017-07-31T15:26:38Z" finished-at="2017-07-31T15:26:42Z">
     <groups>
     </groups>
-    <test name="LOGIN CHROME" duration-ms="9072" started-at="2017-07-12T04:14:51Z" finished-at="2017-07-12T04:15:00Z">
+    <test name="LOGIN CHROME" duration-ms="4401" started-at="2017-07-31T15:26:38Z" finished-at="2017-07-31T15:26:42Z">
       <class name="com.mh.ta.login.TestLogin">
-        <test-method status="PASS" signature="initPOM(java.lang.String)[pri:0, instance:com.mh.ta.login.TestLogin@68c9133c]" name="initPOM" is-config="true" duration-ms="1287" started-at="2017-07-12T11:14:51Z" finished-at="2017-07-12T11:14:52Z">
+        <test-method status="PASS" signature="initPOM(java.lang.String)[pri:0, instance:com.mh.ta.login.TestLogin@cecf639]" name="initPOM" is-config="true" duration-ms="2333" started-at="2017-07-31T22:26:38Z" finished-at="2017-07-31T22:26:40Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initPOM -->
-        <test-method status="PASS" signature="testLogin1()[pri:0, instance:com.mh.ta.login.TestLogin@68c9133c]" name="testLogin1" duration-ms="7691" started-at="2017-07-12T11:14:52Z" finished-at="2017-07-12T11:15:00Z">
+        <test-method status="PASS" signature="testLogin1()[pri:0, instance:com.mh.ta.login.TestLogin@cecf639]" name="testLogin1" duration-ms="1206" started-at="2017-07-31T22:26:40Z" finished-at="2017-07-31T22:26:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin1 -->
-        <test-method status="PASS" signature="diposeDriver()[pri:0, instance:com.mh.ta.login.TestLogin@68c9133c]" name="diposeDriver" is-config="true" duration-ms="79" started-at="2017-07-12T11:15:00Z" finished-at="2017-07-12T11:15:00Z">
+        <test-method status="PASS" signature="diposeDriver()[pri:0, instance:com.mh.ta.login.TestLogin@cecf639]" name="diposeDriver" is-config="true" duration-ms="851" started-at="2017-07-31T22:26:41Z" finished-at="2017-07-31T22:26:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- diposeDriver -->

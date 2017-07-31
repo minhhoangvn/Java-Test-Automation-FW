@@ -1,4 +1,4 @@
-package com.mh.ta.login;
+package com.mh.ta.test.pages;
 
 import org.openqa.selenium.WebDriver;
 

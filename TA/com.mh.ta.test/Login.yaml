@@ -1,0 +1,11 @@
+name: LoginDemo
+threadCount: 10
+parallel: tests
+configFailurePolicy: skip
+tests:
+  - name: LOGIN CHROME
+    parallel: tests
+    parameters: { browser: chrome, configFileName: application1 }
+    classes:
+      - com.mh.ta.test.TestLogin
+

@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.mh.ta</groupId>
+		<artifactId>TA</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>com.mh.ta.test</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mh.ta.core</groupId>
+			<artifactId>com.mh.ta.core</artifactId>
+			 <version>${project.parent.version}</version>
+		</dependency>
+	</dependencies>
+</project>

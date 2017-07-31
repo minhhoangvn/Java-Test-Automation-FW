@@ -3,9 +3,7 @@ package com.mh.ta.core.web;
 import static org.openqa.selenium.remote.CapabilityType.HAS_NATIVE_EVENTS;
 import static org.openqa.selenium.remote.CapabilityType.PAGE_LOAD_STRATEGY;
 import static org.openqa.selenium.remote.DesiredCapabilities.firefox;
-
 import java.util.function.Supplier;
-
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;

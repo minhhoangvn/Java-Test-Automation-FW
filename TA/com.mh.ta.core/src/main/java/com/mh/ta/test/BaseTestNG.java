@@ -10,9 +10,10 @@ public abstract class BaseTestNG {
 	protected final Injector inject;
 	protected final BrowserDriverManagerFactory driverFactory;
 	protected BrowserDriverManager driverManager;
-
-	public BaseTestNG() {
-		this.inject = Guice.createInjector(new MainModule());
+	
+	
+	public BaseTestNG(String configPath) {
+		this.inject = Guice.createInjector(new MainModule(configPath));
 		this.driverFactory = inject.getInstance(BrowserDriverManagerFactory.class);
 	}
 }
