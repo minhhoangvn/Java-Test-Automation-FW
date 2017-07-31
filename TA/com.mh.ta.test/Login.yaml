@@ -5,7 +5,12 @@ configFailurePolicy: skip
 tests:
   - name: LOGIN CHROME
     parallel: tests
-    parameters: { browser: chrome, configFileName: application1 }
+    parameters: { browser: chrome, configFileName: application }
     classes:
       - com.mh.ta.test.TestLogin
 
+  - name: LOGIN FF
+    parallel: tests
+    parameters: { browser: chrome, configFileName: application }
+    classes:
+      - com.mh.ta.test.TestLogin

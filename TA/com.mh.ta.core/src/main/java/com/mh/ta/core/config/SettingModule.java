@@ -33,36 +33,38 @@ public class SettingModule extends AbstractModule {
 				.toInstance(this.settings().getDatabaseConfig());
 	}
 
-	private FrameworkSettings settings() {
-		FrameworkSettings setting = new FrameworkSettings();
+	private FrameworkSettings settings() {		
 		try {
 			Yaml yaml = new Yaml();
 			InputStream input = Files.newInputStream(this.configFilePath());
-			setting = yaml.loadAs((input), FrameworkSettings.class);
+			FrameworkSettings setting = yaml.loadAs((input), FrameworkSettings.class);
+			return setting;
 		} catch (IOException e) {
-			System.err.println(e);
-		}
-		return setting;
+			throw new RuntimeException("Can not load config file");
+		}		
 	}
 
-	private Path configFilePath() throws IOException {
+	private Path configFilePath() {
 		List<Path> yamlPaths;
-
+		try{
 		yamlPaths = Files
 				.find(FileSystems.getDefault().getPath(System.getProperty("user.dir")).getParent(), 20,
 						(filePath, attribute) -> this.isAppilicationConfigFile(filePath,
 								this.settingFileName))
-				.collect(Collectors.toList());
+				.collect(Collectors.toList());		
+		}
+		catch (IOException e){
+			throw new RuntimeException(e);
+		}
+		if (yamlPaths.size()==0) throw new RuntimeException("Can not find application config");
 		return yamlPaths.get(0);
-
 	}
 
-	private Boolean isAppilicationConfigFile(Path filePath, String fileName) {		
+	private Boolean isAppilicationConfigFile(Path filePath, String fileName) {
 		Boolean isCorrectFileName = filePath.getFileName().toString().contains(fileName);
 		Boolean isCorrectExtensionType = filePath.toString().toLowerCase().endsWith(configExtensionType.get(0))
 				|| filePath.toString().toLowerCase().endsWith(configExtensionType.get(1));
 		return isCorrectFileName && isCorrectExtensionType;
 	}
-
 
 }

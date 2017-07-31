@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-LoginDemo">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -100,6 +100,11 @@
                       <a href="#" panel-name="suite-LoginDemo" class="show-methods passed suite-LoginDemo"> (show)</a> <!-- show-methods passed suite-LoginDemo -->
                     </span>
                     <div class="method-list-content passed suite-LoginDemo">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-LoginDemo" title="com.mh.ta.test.TestLogin" hash-for-method="testLogin1">testLogin1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-LoginDemo" title="com.mh.ta.test.TestLogin" hash-for-method="testLogin1">testLogin1</a> <!-- method navigator-link -->
@@ -130,6 +135,13 @@
                   <span class="method-name">testLogin1</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin1">
+                  </a> <!-- testLogin1 -->
+                  <span class="method-name">testLogin1</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-LoginDemo-class-passed -->
         </div> <!-- panel LoginDemo -->
@@ -144,11 +156,18 @@
 &lt;suite thread-count=&quot;10&quot; name=&quot;LoginDemo&quot; parallel=&quot;tests&quot;&gt;
   &lt;test name=&quot;LOGIN CHROME&quot; parallel=&quot;tests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
-    &lt;parameter name=&quot;configPath&quot; value=&quot;application&quot;/&gt;
+    &lt;parameter name=&quot;configFileName&quot; value=&quot;application&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.mh.ta.test.TestLogin&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- LOGIN CHROME --&gt;
+  &lt;test name=&quot;LOGIN FF&quot; parallel=&quot;tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;parameter name=&quot;configFileName&quot; value=&quot;application&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.mh.ta.test.TestLogin&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- LOGIN FF --&gt;
 &lt;/suite&gt; &lt;!-- LoginDemo --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -161,6 +180,9 @@
             <ul>
               <li>
                 <span class="test-name">LOGIN CHROME (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">LOGIN FF (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -186,16 +208,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testLogin1')
 data.setCell(0, 2, 'com.mh.ta.test.TestLogin')
-data.setCell(0, 3, 1199);
+data.setCell(0, 3, 1035);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testLogin1')
+data.setCell(1, 2, 'com.mh.ta.test.TestLogin')
+data.setCell(1, 3, 1018);
 window.suiteTableData['LoginDemo']= { tableData: data, tableDiv: 'times-div-LoginDemo'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-LoginDemo">
               </div> <!-- times-div-LoginDemo -->
             </div> <!-- times-div -->
@@ -226,13 +252,25 @@ return data;
                 <span class="method-name">initPOM(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">initPOM(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testLogin1</span>
-                <span class="method-start">2337 ms</span>
+                <span class="method-start">2370 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin1</span>
+                <span class="method-start">2370 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">diposeDriver</span>
-                <span class="method-start">3537 ms</span>
+                <span class="method-start">3389 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">diposeDriver</span>
+                <span class="method-start">3405 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
