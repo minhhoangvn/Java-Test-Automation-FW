@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>LOGIN FF</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 31 23:16:36 ICT 2017</td>
+<td>Started on:</td><td>Thu Aug 03 22:20:34 ICT 2017</td>
 </tr>
-<tr><td>Total time:</td><td>4 seconds (4286 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (50 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,18 +67,175 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.mh.ta.test.TestLogin.testLogin1()'><b>testLogin1</b><br>Test class: com.mh.ta.test.TestLogin</td>
-<td></td>
-<td>1</td>
-<td>com.mh.ta.test.TestLogin@503f91c3</td></tr>
+<td title='com.mh.ta.guice.TestPerson.init()'><b>init</b><br>Test class: com.mh.ta.guice.TestPerson<br>Parameters: application1</td>
+<td><div><pre>com.google.inject.CreationException: Unable to create injector, see the following errors:
+
+1) A binding to com.mh.ta.core.config.FrameworkSettings was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:27).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:27)
+
+2) A binding to com.mh.ta.core.config.FrameworkSettings$DriverConfig annotated with @com.google.inject.name.Named(value=driver-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:28).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:28)
+
+3) A binding to com.mh.ta.core.config.FrameworkSettings$SUTConfig annotated with @com.google.inject.name.Named(value=sut-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:30).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:30)
+
+4) A binding to com.mh.ta.core.config.FrameworkSettings$DatabaseConfig annotated with @com.google.inject.name.Named(value=database-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:32).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:32)
+
+4 errors
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:470)
+	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.internal.InjectorImpl.createChildInjector(InjectorImpl.java:232)
+	at com.google.inject.internal.InjectorImpl.createChildInjector(InjectorImpl.java:236)
+	at com.mh.ta.guice.GuiceInjectFactory.createInject(GuiceInjectFactory.java:33)
+	at com.mh.ta.guice.TestPerson.init(TestPerson.java:19)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1337192014", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1337192014'><pre>com.google.inject.CreationException: Unable to create injector, see the following errors:
+
+1) A binding to com.mh.ta.core.config.FrameworkSettings was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:27).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:27)
+
+2) A binding to com.mh.ta.core.config.FrameworkSettings$DriverConfig annotated with @com.google.inject.name.Named(value=driver-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:28).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:28)
+
+3) A binding to com.mh.ta.core.config.FrameworkSettings$SUTConfig annotated with @com.google.inject.name.Named(value=sut-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:30).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:30)
+
+4) A binding to com.mh.ta.core.config.FrameworkSettings$DatabaseConfig annotated with @com.google.inject.name.Named(value=database-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:32).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:32)
+
+4 errors
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:470)
+	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.internal.InjectorImpl.createChildInjector(InjectorImpl.java:232)
+	at com.google.inject.internal.InjectorImpl.createChildInjector(InjectorImpl.java:236)
+	at com.mh.ta.guice.GuiceInjectFactory.createInject(GuiceInjectFactory.java:33)
+	at com.mh.ta.guice.TestPerson.init(TestPerson.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.mh.ta.guice.TestPerson@6ec8211c</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.mh.ta.guice.TestPerson.test()'><b>test</b><br>Test class: com.mh.ta.guice.TestPerson</td>
+<td><div><pre>com.google.inject.CreationException: Unable to create injector, see the following errors:
+
+1) A binding to com.mh.ta.core.config.FrameworkSettings was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:27).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:27)
+
+2) A binding to com.mh.ta.core.config.FrameworkSettings$DriverConfig annotated with @com.google.inject.name.Named(value=driver-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:28).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:28)
+
+3) A binding to com.mh.ta.core.config.FrameworkSettings$SUTConfig annotated with @com.google.inject.name.Named(value=sut-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:30).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:30)
+
+4) A binding to com.mh.ta.core.config.FrameworkSettings$DatabaseConfig annotated with @com.google.inject.name.Named(value=database-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:32).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:32)
+
+4 errors
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:470)
+	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.internal.InjectorImpl.createChildInjector(InjectorImpl.java:232)
+	at com.google.inject.internal.InjectorImpl.createChildInjector(InjectorImpl.java:236)
+	at com.mh.ta.guice.GuiceInjectFactory.createInject(GuiceInjectFactory.java:33)
+	at com.mh.ta.guice.TestPerson.init(TestPerson.java:19)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1567705314", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1567705314'><pre>com.google.inject.CreationException: Unable to create injector, see the following errors:
+
+1) A binding to com.mh.ta.core.config.FrameworkSettings was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:27).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:27)
+
+2) A binding to com.mh.ta.core.config.FrameworkSettings$DriverConfig annotated with @com.google.inject.name.Named(value=driver-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:28).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:28)
+
+3) A binding to com.mh.ta.core.config.FrameworkSettings$SUTConfig annotated with @com.google.inject.name.Named(value=sut-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:30).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:30)
+
+4) A binding to com.mh.ta.core.config.FrameworkSettings$DatabaseConfig annotated with @com.google.inject.name.Named(value=database-config) was already configured at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:32).
+  at com.mh.ta.core.config.SettingModule.configure(SettingModule.java:32)
+
+4 errors
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:470)
+	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107)
+	at com.google.inject.internal.InjectorImpl.createChildInjector(InjectorImpl.java:232)
+	at com.google.inject.internal.InjectorImpl.createChildInjector(InjectorImpl.java:236)
+	at com.mh.ta.guice.GuiceInjectFactory.createInject(GuiceInjectFactory.java:33)
+	at com.mh.ta.guice.TestPerson.init(TestPerson.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.mh.ta.guice.TestPerson@6ec8211c</td></tr>
 </table><p>
 </body>
 </html>

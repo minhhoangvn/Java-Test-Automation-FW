@@ -1,55 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="LoginDemo" duration-ms="4286" started-at="2017-07-31T16:16:36Z" finished-at="2017-07-31T16:16:40Z">
+  <suite name="Default suite" duration-ms="5464" started-at="2017-08-03T16:21:08Z" finished-at="2017-08-03T16:21:14Z">
     <groups>
     </groups>
-    <test name="LOGIN CHROME" duration-ms="4286" started-at="2017-07-31T16:16:36Z" finished-at="2017-07-31T16:16:40Z">
-      <class name="com.mh.ta.test.TestLogin">
-        <test-method status="PASS" signature="initPOM(java.lang.String)[pri:0, instance:com.mh.ta.test.TestLogin@70cf32e3]" name="initPOM" is-config="true" duration-ms="2370" started-at="2017-07-31T23:16:36Z" finished-at="2017-07-31T23:16:38Z">
+    <test name="Default test" duration-ms="5464" started-at="2017-08-03T16:21:08Z" finished-at="2017-08-03T16:21:14Z">
+      <class name="com.mh.ta.guice.TestPerson">
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="4474" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:13Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[application]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initPOM -->
-        <test-method status="PASS" signature="testLogin1()[pri:0, instance:com.mh.ta.test.TestLogin@70cf32e3]" name="testLogin1" duration-ms="1018" started-at="2017-07-31T23:16:38Z" finished-at="2017-07-31T23:16:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin1 -->
-        <test-method status="PASS" signature="diposeDriver()[pri:0, instance:com.mh.ta.test.TestLogin@70cf32e3]" name="diposeDriver" is-config="true" duration-ms="886" started-at="2017-07-31T23:16:39Z" finished-at="2017-07-31T23:16:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- diposeDriver -->
-      </class> <!-- com.mh.ta.test.TestLogin -->
-    </test> <!-- LOGIN CHROME -->
-    <test name="LOGIN FF" duration-ms="4286" started-at="2017-07-31T16:16:36Z" finished-at="2017-07-31T16:16:40Z">
-      <class name="com.mh.ta.test.TestLogin">
-        <test-method status="PASS" signature="initPOM(java.lang.String)[pri:0, instance:com.mh.ta.test.TestLogin@503f91c3]" name="initPOM" is-config="true" duration-ms="2370" started-at="2017-07-31T23:16:36Z" finished-at="2017-07-31T23:16:38Z">
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="3828" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[application]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initPOM -->
-        <test-method status="PASS" signature="testLogin1()[pri:0, instance:com.mh.ta.test.TestLogin@503f91c3]" name="testLogin1" duration-ms="1035" started-at="2017-07-31T23:16:38Z" finished-at="2017-07-31T23:16:39Z">
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="4466" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin1 -->
-        <test-method status="PASS" signature="diposeDriver()[pri:0, instance:com.mh.ta.test.TestLogin@503f91c3]" name="diposeDriver" is-config="true" duration-ms="870" started-at="2017-07-31T23:16:39Z" finished-at="2017-07-31T23:16:40Z">
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="4459" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- diposeDriver -->
-      </class> <!-- com.mh.ta.test.TestLogin -->
-    </test> <!-- LOGIN FF -->
-  </suite> <!-- LoginDemo -->
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="4214" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="4459" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="3983" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="4173" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="3813" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="init" is-config="true" duration-ms="4473" started-at="2017-08-03T23:21:08Z" finished-at="2017-08-03T23:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="968" started-at="2017-08-03T23:21:12Z" finished-at="2017-08-03T23:21:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="955" started-at="2017-08-03T23:21:12Z" finished-at="2017-08-03T23:21:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="845" started-at="2017-08-03T23:21:12Z" finished-at="2017-08-03T23:21:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="720" started-at="2017-08-03T23:21:13Z" finished-at="2017-08-03T23:21:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="695" started-at="2017-08-03T23:21:13Z" finished-at="2017-08-03T23:21:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="906" started-at="2017-08-03T23:21:13Z" finished-at="2017-08-03T23:21:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="965" started-at="2017-08-03T23:21:13Z" finished-at="2017-08-03T23:21:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="920" started-at="2017-08-03T23:21:13Z" finished-at="2017-08-03T23:21:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="930" started-at="2017-08-03T23:21:13Z" finished-at="2017-08-03T23:21:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="test()[pri:0, instance:com.mh.ta.guice.TestPerson@4b952a2d]" name="test" duration-ms="972" started-at="2017-08-03T23:21:13Z" finished-at="2017-08-03T23:21:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+      </class> <!-- com.mh.ta.guice.TestPerson -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
