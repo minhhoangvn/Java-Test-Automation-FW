@@ -1,4 +1,4 @@
-package com.mh.ta.selenium.driver;
+package com.mh.ta.driver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,35 +20,42 @@ import com.mh.ta.factory.GuiceInjectFactory;
 import com.mh.ta.interfaces.driver.IDriver;
 
 @Singleton
-public class SeleniumDriverManager {
-	private IDriver<WebDriver> drivers;
+public class DriverManager<T> {
+	private IDriver<T> drivers;
 	private MainConfig config;
 	private Object options;
 	private DesiredCapabilities capabilities;
 
-	public SeleniumDriverManager() {
+	public DriverManager() {
 		initMainConfig();
 	}
 
-	public SeleniumDriverManager(MainConfig config) {
+	public DriverManager(MainConfig config) {
 		this.config = config;
 	}
 
 	public void createDriver(String type) {
-		Class<IDriver<WebDriver>> cls = BrowserType.getBrowserClass(type);
-		IDriver<WebDriver> driverManager = GuiceInjectFactory.instance().getObjectInstance(cls);
+		System.err.println("Create driver " + type);
+		Class<IDriver<T>> cls = BrowserType.getBrowserClass(type);
+		IDriver<T> driverManager = GuiceInjectFactory.instance().getObjectInstance(cls);
 		driverManager.setCapabilities(this.capabilities);
 		driverManager.setDriverOptions(this.options);
 		drivers = driverManager;
 		setUpDriverConfig();
 	}
 
+	@SuppressWarnings("unchecked")
+	public <DriverType> DriverType getDriverType() {
+		return (DriverType) drivers.getDriver();
+	}
+
+	@SuppressWarnings("unchecked")
 	public WebDriver getDriver() {
 		if (drivers == null) {
-			drivers = (GuiceInjectFactory.instance().getObjectInstance(Chrome.class));
+			drivers = (IDriver<T>) (GuiceInjectFactory.instance().getObjectInstance(Chrome.class));
 			setUpDriverConfig();
 		}
-		return drivers.getDriver();
+		return (WebDriver) drivers.getDriver();
 	}
 
 	public void diposeDriver() {
@@ -66,7 +73,7 @@ public class SeleniumDriverManager {
 	}
 
 	private void setUpDriverConfig() {
-		WebDriver driver = drivers.getDriver();
+		WebDriver driver = (WebDriver) drivers.getDriver();
 		DriverConfig driverConfig = config.getDriverConfig();
 		setUpWindows(driverConfig, driver);
 		setUpDriverTimeOut(driverConfig, driver);

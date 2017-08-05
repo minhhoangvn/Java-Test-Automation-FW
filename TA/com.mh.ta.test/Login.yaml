@@ -4,13 +4,13 @@ parallel: methods
 configFailurePolicy: skip
 tests:
   - name: LOGIN CHROME
-    parallel: tests
-    parameters: { browser: chrome, configFileName: application }
+    parallel: methods
+    parameters: { browser: firefox, configFileName: application }
     classes:
-      - com.mh.ta.guice.TestPerson
+      - com.mh.ta.guice.TestConfig
 
   - name: LOGIN FF
-    parallel: tests
-    parameters: { browser: chrome, configFileName: application1 }
+    parallel: methods
+    parameters: { browser: firefox, configFileName: application1 }
     classes:
-      - com.mh.ta.guice.TestPerson
+      - com.mh.ta.guice.TestConfig

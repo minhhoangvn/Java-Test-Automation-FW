@@ -8,6 +8,7 @@
           <include name="close"/>
           <include name="testConfig"/>
           <include name="init"/>
+          <include name="createDriver"/>
         </methods>
       </class> <!-- com.mh.ta.guice.TestConfig -->
     </classes>

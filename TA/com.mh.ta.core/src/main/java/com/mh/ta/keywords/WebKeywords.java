@@ -3,16 +3,12 @@ package com.mh.ta.keywords;
 import static java.lang.String.format;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.mh.ta.core.annotation.HighLightElement;
-import com.mh.ta.factory.WebDriverFactory;
+import com.mh.ta.factory.DriverFactory;
 
 public class WebKeywords {
-	private WebDriver driver = WebDriverFactory.getDriver();
-
-	private JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
 	@HighLightElement
 	public void clickToElement(WebElement element) {
@@ -29,6 +25,7 @@ public class WebKeywords {
 	}
 
 	public void setElementAttribute(WebElement element, String key, String value) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) DriverFactory.getDriver();
 		jsExecutor.executeScript(format("arguments[0].setAttribute('%s',arguments[1]);", key), element, value);
 	}
 

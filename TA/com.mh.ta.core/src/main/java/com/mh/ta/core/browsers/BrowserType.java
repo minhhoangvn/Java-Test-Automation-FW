@@ -1,10 +1,14 @@
 package com.mh.ta.core.browsers;
 
 import com.mh.ta.base.browsers.Chrome;
+import com.mh.ta.base.browsers.Firefox;
+import com.mh.ta.base.browsers.IE;
+import com.mh.ta.base.browsers.Remote;
 import com.mh.ta.interfaces.driver.IDriver;
 
 public enum BrowserType {
-	CHROME("CHROME", Chrome.class);
+	CHROME("CHROME", Chrome.class), FIREFOX("FIREFOX", Firefox.class), IE("IE", IE.class), REMOTE("REMOTE",
+			Remote.class);
 
 	private String value;
 	private Class<?> cls;

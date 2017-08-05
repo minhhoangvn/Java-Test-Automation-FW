@@ -6,11 +6,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.google.inject.Inject;
-import com.mh.ta.selenium.driver.SeleniumDriverManager;
+import com.mh.ta.driver.DriverManager;
 
 public class TestPerson {
 	@Inject
-	SeleniumDriverManager factory;
+	DriverManager factory;
 
 	@Parameters({ "configFileName" })
 	@BeforeMethod

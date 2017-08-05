@@ -5,7 +5,7 @@ import com.mh.ta.page.BasePage;
 public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 
 	public LoginPage goToLoginPage() {
-		this.driver.get("https://accounts.google.com/signin/v2");
+		this.driver.get().get("https://accounts.google.com/signin/v2");
 		return this;
 	}
 
@@ -20,7 +20,7 @@ public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 	}
 
 	public LoginPage inputPassword() {
-		this.keywords.inputText.accept(this.Elements().txtPassword(), "minhquanvn2171990");
+		this.keywords.inputText(this.Elements().txtPassword(), "minhquanvn2171990");
 		return this;
 	}
 

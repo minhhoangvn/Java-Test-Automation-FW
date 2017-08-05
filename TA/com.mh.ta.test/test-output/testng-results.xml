@@ -2,20 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6868" started-at="2017-08-05T10:03:36Z" finished-at="2017-08-05T10:03:43Z">
+  <suite name="Default suite" duration-ms="6607" started-at="2017-08-05T11:54:16Z" finished-at="2017-08-05T11:54:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6868" started-at="2017-08-05T10:03:36Z" finished-at="2017-08-05T10:03:43Z">
+    <test name="Default test" duration-ms="6607" started-at="2017-08-05T11:54:16Z" finished-at="2017-08-05T11:54:23Z">
       <class name="com.mh.ta.guice.TestConfig">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.mh.ta.guice.TestConfig@4566e5bd]" name="init" is-config="true" duration-ms="3788" started-at="2017-08-05T17:03:36Z" finished-at="2017-08-05T17:03:40Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.mh.ta.guice.TestConfig@56ef9176]" name="init" is-config="true" duration-ms="348" started-at="2017-08-05T18:54:16Z" finished-at="2017-08-05T18:54:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="testConfig()[pri:0, instance:com.mh.ta.guice.TestConfig@4566e5bd]" name="testConfig" duration-ms="2237" started-at="2017-08-05T17:03:40Z" finished-at="2017-08-05T17:03:42Z">
+        <test-method status="PASS" signature="createDriver(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestConfig@56ef9176]" name="createDriver" is-config="true" duration-ms="3458" started-at="2017-08-05T18:54:16Z" finished-at="2017-08-05T18:54:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDriver -->
+        <test-method status="PASS" signature="testConfig()[pri:0, instance:com.mh.ta.guice.TestConfig@56ef9176]" name="testConfig" duration-ms="2283" started-at="2017-08-05T18:54:20Z" finished-at="2017-08-05T18:54:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testConfig -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.mh.ta.guice.TestConfig@4566e5bd]" name="close" is-config="true" duration-ms="829" started-at="2017-08-05T17:03:42Z" finished-at="2017-08-05T17:03:43Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:com.mh.ta.guice.TestConfig@56ef9176]" name="close" is-config="true" duration-ms="855" started-at="2017-08-05T18:54:22Z" finished-at="2017-08-05T18:54:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->

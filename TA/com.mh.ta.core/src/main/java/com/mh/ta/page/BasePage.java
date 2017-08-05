@@ -1,12 +1,14 @@
 package com.mh.ta.page;
 
+import java.util.function.Supplier;
+
 import org.openqa.selenium.WebDriver;
 
 import com.mh.ta.core.helper.ClassInitializer;
 import com.mh.ta.core.helper.Constant;
 import com.mh.ta.factory.ActionKeywords;
 import com.mh.ta.factory.GuiceInjectFactory;
-import com.mh.ta.factory.WebDriverFactory;
+import com.mh.ta.factory.DriverFactory;
 import com.mh.ta.keywords.WebKeywords;
 
 public class BasePage<E extends BaseElements, V extends BaseValidations<E>> {
@@ -15,7 +17,7 @@ public class BasePage<E extends BaseElements, V extends BaseValidations<E>> {
 	private Class<?> valdidations;
 
 	protected WebKeywords keywords = ActionKeywords.WebUI();
-	protected WebDriver driver = WebDriverFactory.getDriver();
+	protected Supplier<WebDriver> driver = () -> DriverFactory.getDriver();
 
 	public BasePage() {
 		this.initPageClass();

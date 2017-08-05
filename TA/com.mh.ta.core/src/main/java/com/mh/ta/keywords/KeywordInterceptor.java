@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 
 import com.mh.ta.core.annotation.HighLightElement;
 import com.mh.ta.factory.ActionKeywords;
-import com.mh.ta.factory.WebDriverFactory;
+import com.mh.ta.factory.DriverFactory;
 
 public class KeywordInterceptor implements MethodInterceptor {
 	private final String webElementClassName = "RemoteWebElement";
@@ -26,7 +26,7 @@ public class KeywordInterceptor implements MethodInterceptor {
 	}
 
 	private void highlightElement(WebElement element, HighLightElement highlight) {
-		JavascriptExecutor js = (JavascriptExecutor) WebDriverFactory.getDriver();
+		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
 		String orig = element.getAttribute("style");
 		js.executeScript(format("arguments[0].setAttribute('%s',arguments[1]);", "style"), element, format(
 				"border: 3px solid %s; background-color: %s;", highlight.borderColor(), highlight.backgroundColor()));
