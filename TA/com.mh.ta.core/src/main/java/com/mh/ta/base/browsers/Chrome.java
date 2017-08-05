@@ -1,18 +1,20 @@
 package com.mh.ta.base.browsers;
 
+import static org.openqa.selenium.remote.DesiredCapabilities.chrome;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import static org.openqa.selenium.remote.DesiredCapabilities.chrome;
-import com.mh.ta.interfaces.IDriver;
+
+import com.mh.ta.interfaces.driver.IDriver;
 
 public class Chrome implements IDriver<WebDriver> {
 
 	private ChromeOptions options;
 	private DesiredCapabilities capabilities;
 	private WebDriver driver;
-
+	
 	private ChromeOptions getOptions() {
 		return options;
 	}
@@ -41,18 +43,14 @@ public class Chrome implements IDriver<WebDriver> {
 	}
 
 	@Override
-	public void setDriverServices(Object services) {
-		
-	}
-
-	@Override
 	public void setCapabilities(Object capabilities) {
 		this.capabilities = (DesiredCapabilities) capabilities;
 	}
 
 	@Override
 	public void diposeDriver() {
-		driver.quit();
+		if (driver != null)
+			driver.quit();
 		driver = null;
 	}
 
@@ -62,5 +60,4 @@ public class Chrome implements IDriver<WebDriver> {
 			this.createDriver();
 		return driver;
 	}
-
 }

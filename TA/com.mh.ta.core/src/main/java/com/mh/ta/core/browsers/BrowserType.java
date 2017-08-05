@@ -1,10 +1,10 @@
 package com.mh.ta.core.browsers;
 
 import com.mh.ta.base.browsers.Chrome;
+import com.mh.ta.interfaces.driver.IDriver;
 
 public enum BrowserType {
-	CHROME(
-			"CHROME", Chrome.class);
+	CHROME("CHROME", Chrome.class);
 
 	private String value;
 	private Class<?> cls;
@@ -14,17 +14,18 @@ public enum BrowserType {
 		this.cls = browserClass;
 	}
 
-	public static Class<?> getBrowserClass(String browser) {
+	@SuppressWarnings("unchecked")
+	public static <E extends IDriver<?>> Class<E> getBrowserClass(String browser) {
 
 		for (BrowserType type : BrowserType.values()) {
 			if (type.value.toLowerCase().equals(browser.toLowerCase())) {
-				return type.cls;
+				return (Class<E>) type.cls;
 			}
 		}
 		throw new IllegalArgumentException(String.format("Browser % is invalid", browser));
 	}
-	
-	public static BrowserType getTypeByString(String browser){
+
+	public static BrowserType getTypeByString(String browser) {
 		for (BrowserType type : BrowserType.values()) {
 			if (type.value.toLowerCase().equals(browser.toLowerCase())) {
 				return type;

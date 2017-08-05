@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import com.mh.ta.interfaces.IDriver;
+import com.mh.ta.interfaces.driver.IDriver;
 
 public class Firefox implements IDriver<WebDriver> {
 	private FirefoxProfile profile;
@@ -42,11 +42,6 @@ public class Firefox implements IDriver<WebDriver> {
 	@Override
 	public void setDriverOptions(Object options) {
 		this.profile = (FirefoxProfile) profile;
-	}
-
-	@Override
-	public void setDriverServices(Object services) {
-
 	}
 
 	@Override

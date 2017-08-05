@@ -1,0 +1,30 @@
+emailConfig:
+  emailUser: none
+  emailPass: none
+  host: none
+  sendTo: none
+  subject: none
+  attachedReport: true
+reportConfig:
+  reportFolder: TestReport
+  convertToPdf: true
+sutConfig:
+  baseUri: google.com/
+  accounts:
+     - user1: user1
+     - user2: user2
+     - user3: user3
+driverConfig:
+  driversFolderName: drivers
+  driverType: web
+  implicitWait: 5
+  pageloadTimeout: 60
+  drivercommandTimeout: 60
+  hidden: false
+  maximize: true
+dataSourceConfig:
+  databaseDriver: none
+  databaseConnectionString: none
+  databaseUserName: none
+  databasePassword: none
+  testDataFolder: TestData

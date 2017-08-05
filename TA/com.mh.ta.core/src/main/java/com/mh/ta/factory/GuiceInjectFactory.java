@@ -1,11 +1,11 @@
-package com.mh.ta.guice;
+package com.mh.ta.factory;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Module;
 
 public class GuiceInjectFactory {
-	private Injector inject = Guice.createInjector();
+	private static Injector inject = Guice.createInjector();
 	private static GuiceInjectFactory insatnce;
 
 	private GuiceInjectFactory() {
