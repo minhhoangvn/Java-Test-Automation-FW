@@ -1,5 +1,8 @@
 package com.mh.ta.test.pages;
 
+
+import java.util.List;
+
 import com.mh.ta.base.selenium.webelement.FindBy;
 import com.mh.ta.interfaces.element.TAElement;
 import com.mh.ta.page.BaseElements;
@@ -24,5 +27,9 @@ public class LoginElements extends BaseElements {
 
 	public TAElement btnSignIn() {
 		return this.findElement(FindBy.elementId("signIn"));
+	}
+	
+	public List<TAElement> sampleListElement(){
+		return this.findListElement(FindBy.xpath("//*[@jsname='wQNmvb']"));
 	}
 }

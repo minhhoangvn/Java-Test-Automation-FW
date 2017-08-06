@@ -1,5 +1,6 @@
 package com.mh.ta.test.pages;
 
+import com.mh.ta.interfaces.element.TAElement;
 import com.mh.ta.page.BasePage;
 
 public class LoginPage extends BasePage<LoginElements, LoginValidations> {
@@ -27,5 +28,11 @@ public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 
 	public String testElementPage() {
 		return this.Elements().txtSampleForm();
+	}
+	
+	public void printInnerTextListElement(){
+		for(TAElement element : this.Elements().sampleListElement()){
+			System.err.println(element.getElementInnerText());
+		}
 	}
 }
