@@ -11,10 +11,6 @@
 	<description>Core Automation FW</description>
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
 			<version>${appium.version}</version>
@@ -30,20 +26,20 @@
 			<version>${guice.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>com.google.inject.extensions</groupId>
-            <artifactId>guice-multibindings</artifactId>
-            <version>${guicemultibinding.version}</version>
-        </dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-multibindings</artifactId>
+			<version>${guicemultibinding.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>${selenium.version}</version>
+			<version>${selenium.version}</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
 		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
-			<version>${snakeyaml.version}</version>
+			<version>${snakeyaml.version}</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -51,13 +47,22 @@
 			<version>${guava.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extentreport.version}</version>
 		</dependency>
 	</dependencies>
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${mavencompiler.version}</version>
+            <configuration>
+                <source>${java.version}</source>
+                <target>${java.version}</target>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 </project>

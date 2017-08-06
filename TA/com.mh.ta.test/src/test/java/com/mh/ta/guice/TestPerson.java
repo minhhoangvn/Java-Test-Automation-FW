@@ -20,16 +20,17 @@ public class TestPerson extends BaseWebTestNG {
 
 	@Test(invocationCount = 2, threadPoolSize = 2)
 	public void testLoginPage() throws InterruptedException {
-		int randomNum = ThreadLocalRandom.current().nextInt(5000, 20000 + 1);
-		System.err.println(Thread.currentThread().getId() + " " + login);
-		login.goToLoginPage();
-		login.inputEmail();
-		System.err.println("Thread " + Thread.currentThread().getId() + " sleep in " + randomNum);
-		Thread.sleep(randomNum);
-		login.clickNext();
-		login.inputPassword();
-		System.err.println(Thread.currentThread().getId() + " " + login);
-		Thread.sleep(4000);
+		
+		//int randomNum = ThreadLocalRandom.current().nextInt(5000, 20000 + 1);
+		//System.err.println(Thread.currentThread().getId() + " " + login);
+		//login.goToLoginPage();
+		//login.inputEmail();
+		//System.err.println("Thread " + Thread.currentThread().getId() + " sleep in " + randomNum);
+		//Thread.sleep(randomNum);
+		//login.clickNext();
+		//login.inputPassword();
+		//System.err.println(Thread.currentThread().getId() + " " + login);
+		//Thread.sleep(4000);
 	}
 
 	@Test(enabled = false, invocationCount = 1, threadPoolSize = 1)

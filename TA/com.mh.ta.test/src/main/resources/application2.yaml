@@ -6,7 +6,7 @@ emailConfig:
   subject: none
   attachedReport: true
 reportConfig:
-  reportFolder: TestReport
+  reportFolder: TestReportSub
   convertToPdf: true
 sutConfig:
   baseUri: google.com/

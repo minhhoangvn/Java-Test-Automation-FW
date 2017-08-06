@@ -5,6 +5,7 @@ import com.mh.ta.page.BasePage;
 public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 
 	public LoginPage goToLoginPage() {
+		
 		this.driver.get().get("https://accounts.google.com/signin/v2");
 		return this;
 	}

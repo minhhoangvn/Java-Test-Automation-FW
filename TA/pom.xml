@@ -11,31 +11,24 @@
 	<name>TA</name>
 	<description>TA</description>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.4.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	
 	<modules>
 		<module>com.mh.ta.core</module>
-		<module>com.mh.ta</module>
 		<module>com.mh.ta.test</module>
 	</modules>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<selenium.version>3.4.0</selenium.version>	    	  
-	    <mysql.version>6.0.5</mysql.version>
-	    <guava.version>21.0</guava.version>
-	    <appium.version>5.0.0-BETA9</appium.version>
-	    <testng.version>6.11</testng.version>
-	    <guice.version>4.1.0</guice.version>
-	    <guicemultibinding.version>4.1.0</guicemultibinding.version>
-	    <snakeyaml.version>1.18</snakeyaml.version>
-	</properties>	
-	
+		<selenium.version>3.4.0</selenium.version>
+		<mysql.version>6.0.5</mysql.version>
+		<guava.version>21.0</guava.version>
+		<appium.version>5.0.0-BETA9</appium.version>
+		<testng.version>6.11</testng.version>
+		<guice.version>4.1.0</guice.version>
+		<guicemultibinding.version>4.1.0</guicemultibinding.version>
+		<extentreport.version>3.0.6</extentreport.version>
+		<snakeyaml.version>1.18</snakeyaml.version>
+		<mavencompiler.version>3.6.1</mavencompiler.version>
+	</properties>
 </project>

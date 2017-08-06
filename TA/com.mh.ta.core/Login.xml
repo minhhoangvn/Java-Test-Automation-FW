@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="LoginDemo" parallel="tests" thread-count="10">
-	<test name="LOGIN CHROME">
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="com.mh.ta.login.TestLogin" />
-		</classes>
-	</test>
-</suite>
