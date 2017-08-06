@@ -22,7 +22,7 @@ public enum BrowserType {
 	public static <E extends IDriver<?>> Class<E> getBrowserClass(String browser) {
 
 		for (BrowserType type : BrowserType.values()) {
-			if (type.value.toLowerCase().equals(browser.toLowerCase())) {
+			if (type.value.equalsIgnoreCase(browser.toLowerCase())) {
 				return (Class<E>) type.cls;
 			}
 		}
@@ -31,7 +31,7 @@ public enum BrowserType {
 
 	public static BrowserType getTypeByString(String browser) {
 		for (BrowserType type : BrowserType.values()) {
-			if (type.value.toLowerCase().equals(browser.toLowerCase())) {
+			if (type.value.equalsIgnoreCase(browser.toLowerCase())) {
 				return type;
 			}
 		}

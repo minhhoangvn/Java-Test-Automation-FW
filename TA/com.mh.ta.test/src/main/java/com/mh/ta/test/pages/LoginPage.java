@@ -10,7 +10,7 @@ public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 	}
 
 	public LoginPage inputEmail() {
-		this.keywords.inputText(this.Elements().txtEmail(), "minhquanvn2171990");
+		this.keywords.intputTextToElement(this.Elements().txtEmail(), "minhquanvn2171990");
 		return this;
 	}
 
@@ -20,7 +20,7 @@ public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 	}
 
 	public LoginPage inputPassword() {
-		this.keywords.inputText(this.Elements().txtPassword(), "minhquanvn2171990");
+		this.keywords.intputTextToElement(this.Elements().txtPassword(), "minhquanvn2171990");
 		return this;
 	}
 

@@ -20,7 +20,7 @@ driverConfig:
   implicitWait: 5
   pageloadTimeout: 60
   drivercommandTimeout: 60
-  hidden: false
+  hidden: true
   maximize: true
 dataSourceConfig:
   databaseDriver: none

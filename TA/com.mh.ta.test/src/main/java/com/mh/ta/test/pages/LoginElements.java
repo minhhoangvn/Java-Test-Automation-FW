@@ -1,8 +1,7 @@
 package com.mh.ta.test.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
+import com.mh.ta.base.selenium.webelement.FindBy;
+import com.mh.ta.interfaces.element.TAElement;
 import com.mh.ta.page.BaseElements;
 
 public class LoginElements extends BaseElements {
@@ -11,19 +10,19 @@ public class LoginElements extends BaseElements {
 		return "Test Sample";
 	}
 
-	public WebElement txtEmail() {
-		return this.findElement(By.id("identifierId"));
+	public TAElement txtEmail() {
+		return this.findElement(FindBy.elementId("identifierId"));
 	}
 
-	public WebElement btnNext() {
-		return this.findElement(By.xpath("//span[text()='Next']"));
+	public TAElement btnNext() {
+		return this.findElement(FindBy.xpath("//span[text()='Next']"));
 	}
 
-	public WebElement txtPassword() {
-		return this.findElementUntilVisible(By.name("password"), 30, 500);
+	public TAElement txtPassword() {
+		return this.findElementUntilVisible(FindBy.elementName("password"), 5000, 100);
 	}
 
-	public WebElement btnSignIn() {
-		return this.findElement(By.id("signIn"));
+	public TAElement btnSignIn() {
+		return this.findElement(FindBy.elementId("signIn"));
 	}
 }

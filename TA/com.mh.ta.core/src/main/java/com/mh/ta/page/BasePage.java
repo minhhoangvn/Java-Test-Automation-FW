@@ -8,16 +8,16 @@ import com.mh.ta.core.helper.ClassInitializer;
 import com.mh.ta.core.helper.Constant;
 import com.mh.ta.factory.ActionKeywords;
 import com.mh.ta.factory.GuiceInjectFactory;
-import com.mh.ta.factory.DriverFactory;
-import com.mh.ta.keywords.WebKeywords;
+import com.mh.ta.factory.SeleniumDriverFactory;
+import com.mh.ta.keywords.TAWebKeywords;
 
 public class BasePage<E extends BaseElements, V extends BaseValidations<E>> {
 
 	private Class<?> elements;
 	private Class<?> valdidations;
 
-	protected WebKeywords keywords = ActionKeywords.WebUI();
-	protected Supplier<WebDriver> driver = () -> DriverFactory.getDriver();
+	protected TAWebKeywords keywords = ActionKeywords.WebUi();
+	protected Supplier<WebDriver> driver = () -> SeleniumDriverFactory.getSeleniumDriver().getDriver();
 
 	public BasePage() {
 		this.initPageClass();

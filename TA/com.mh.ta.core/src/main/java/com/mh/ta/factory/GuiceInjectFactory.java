@@ -33,7 +33,7 @@ public class GuiceInjectFactory {
 		inject = inject.createChildInjector(module);
 	}
 
-	public <T> T getObjectInstance(Class<T> t) {
-		return inject.getInstance(t);
+	public <T> T getObjectInstance(Class<T> cls) {
+		return inject.getInstance(cls);
 	}
 }

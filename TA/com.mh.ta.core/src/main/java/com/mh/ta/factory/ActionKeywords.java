@@ -1,11 +1,11 @@
 package com.mh.ta.factory;
 
-import com.mh.ta.keywords.WebKeywords;
+import com.mh.ta.keywords.TAWebKeywords;
 
 public class ActionKeywords {
-	private static final WebKeywords webKW = GuiceInjectFactory.instance().getObjectInstance(WebKeywords.class);
+	private static final TAWebKeywords WebKw = GuiceInjectFactory.instance().getObjectInstance(TAWebKeywords.class);
 
-	public static WebKeywords WebUI() {
-		return webKW;
+	public static TAWebKeywords WebUi() {
+		return WebKw;
 	}
 }

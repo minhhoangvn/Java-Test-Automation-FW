@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <parameter name="gridServerOptions" value="Grid server value 2 2 2 and long long "/>
   <test name="Default test(failed)">
     <classes>
-      <class name="com.mh.ta.guice.TestConfig">
+      <class name="com.mh.ta.guice.TestPerson">
         <methods>
-          <include name="close"/>
-          <include name="testConfig"/>
-          <include name="init"/>
-          <include name="createDriver"/>
+          <include name="cleanUpSuite"/>
+          <include name="setUpSuites"/>
+          <include name="test"/>
+          <include name="cleanUpTest"/>
+          <include name="setUpTest"/>
         </methods>
-      </class> <!-- com.mh.ta.guice.TestConfig -->
+      </class> <!-- com.mh.ta.guice.TestPerson -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="10" name="Failed suite [LoginDemo]" parallel="methods">
-  <test name="LOGIN FF(failed)" parallel="methods">
-    <parameter name="browser" value="firefox"/>
-    <parameter name="configFileName" value="application1"/>
+  <test name="LOGIN CHROME(failed)" parallel="tests">
+    <parameter name="appConfig" value="application.yaml"/>
     <classes>
-      <class name="com.mh.ta.guice.TestConfig">
+      <class name="com.mh.ta.test.TestOb">
         <methods>
-          <include name="close"/>
-          <include name="testConfig"/>
           <include name="init"/>
-          <include name="createDriver"/>
+          <include name="testPattern"/>
         </methods>
-      </class> <!-- com.mh.ta.guice.TestConfig -->
+      </class> <!-- com.mh.ta.test.TestOb -->
     </classes>
-  </test> <!-- LOGIN FF(failed) -->
+  </test> <!-- LOGIN CHROME(failed) -->
 </suite> <!-- Failed suite [LoginDemo] -->

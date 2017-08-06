@@ -8,14 +8,14 @@ import com.mh.ta.core.helper.ClassInitializer;
 import com.mh.ta.core.helper.Constant;
 import com.mh.ta.factory.ActionKeywords;
 import com.mh.ta.factory.GuiceInjectFactory;
-import com.mh.ta.factory.DriverFactory;
-import com.mh.ta.keywords.WebKeywords;
+import com.mh.ta.factory.SeleniumDriverFactory;
+import com.mh.ta.keywords.TAWebKeywords;
 
 public class BaseValidations<E extends BaseElements> {
 
 	private Class<?> elements;
-	protected WebKeywords keywords = ActionKeywords.WebUI();
-	protected Supplier<WebDriver> driver = () -> DriverFactory.getDriver();
+	protected TAWebKeywords keywords = ActionKeywords.WebUi();
+	protected Supplier<WebDriver> driver = () -> SeleniumDriverFactory.getSeleniumDriver().getDriver();
 
 	public BaseValidations() {
 		this.initElementClass();

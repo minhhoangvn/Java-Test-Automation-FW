@@ -1,36 +1,24 @@
 package com.mh.ta.keywords;
 
-import static java.lang.String.format;
-
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 
+import com.mh.ta.base.selenium.SeleniumElement;
 import com.mh.ta.core.annotation.HighLightElement;
-import com.mh.ta.factory.ActionKeywords;
-import com.mh.ta.factory.DriverFactory;
 
 public class KeywordInterceptor implements MethodInterceptor {
-	private final String webElementClassName = "RemoteWebElement";
+	private final String webElementClassName = "SeleniumElement";
 
 	@Override
 	public Object invoke(MethodInvocation invocation) throws Throwable {
 		HighLightElement highlight = invocation.getMethod().getAnnotation(HighLightElement.class);
 		for (Object arg : invocation.getArguments()) {
-			if (arg.getClass().getSimpleName().equals(webElementClassName))
-				this.highlightElement((WebElement) arg, highlight);
+			if (arg.getClass().getSimpleName().equalsIgnoreCase(webElementClassName)) {
+				SeleniumElement element = (SeleniumElement) arg;
+				element.highlightElement(highlight.borderColor(), highlight.backgroundColor(), highlight.timeoutInMs());
+			}
 		}
 		return invocation.proceed();
 
-	}
-
-	private void highlightElement(WebElement element, HighLightElement highlight) {
-		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
-		String orig = element.getAttribute("style");
-		js.executeScript(format("arguments[0].setAttribute('%s',arguments[1]);", "style"), element, format(
-				"border: 3px solid %s; background-color: %s;", highlight.borderColor(), highlight.backgroundColor()));
-		ActionKeywords.WebUI().sleepInMilliseconds(highlight.timeoutInMs());
-		js.executeScript(format("arguments[0].setAttribute('%s',arguments[1]);", "style"), element, orig);
 	}
 }
