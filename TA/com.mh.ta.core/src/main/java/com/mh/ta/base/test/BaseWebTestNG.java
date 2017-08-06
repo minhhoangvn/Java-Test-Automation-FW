@@ -6,6 +6,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import com.mh.ta.base.selenium.SeleniumElementModule;
 import com.mh.ta.core.config.MainConfigModule;
 import com.mh.ta.factory.DriverFactory;
 import com.mh.ta.factory.GuiceInjectFactory;
@@ -20,7 +21,8 @@ public class BaseWebTestNG {
 	protected void setUpTest(@Optional("application.yaml") String configFile, @Optional("chrome") String browserType,
 			@Optional("null") String gridServerOptions) {
 		GuiceInjectFactory.instance().createInject(new MainConfigModule(configFile));
-		GuiceInjectFactory.instance().createInject(new KeywordModule());
+		//GuiceInjectFactory.instance().createInject(new KeywordModule());
+		GuiceInjectFactory.instance().createInject(new SeleniumElementModule());
 		GuiceInjectFactory.instance().injectToClass(this);
 		DriverFactory.createDriver(browserType);
 	}

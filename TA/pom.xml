@@ -27,6 +27,7 @@
 		<testng.version>6.11</testng.version>
 		<guice.version>4.1.0</guice.version>
 		<guicemultibinding.version>4.1.0</guicemultibinding.version>
+		<guiceassited.version>4.1.0</guiceassited.version>
 		<extentreport.version>3.0.6</extentreport.version>
 		<snakeyaml.version>1.18</snakeyaml.version>
 		<mavencompiler.version>3.6.1</mavencompiler.version>

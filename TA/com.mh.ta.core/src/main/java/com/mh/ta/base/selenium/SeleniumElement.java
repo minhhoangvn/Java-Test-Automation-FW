@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.openqa.selenium.WebElement;
 
+import com.google.inject.Inject;
+import com.google.inject.assistedinject.Assisted;
 import com.mh.ta.base.selenium.webelement.FindBy;
 import com.mh.ta.core.annotation.HighLightElement;
 import com.mh.ta.factory.GuiceInjectFactory;
@@ -16,8 +18,8 @@ public class SeleniumElement implements TAElement {
 	protected WebElement parentElement;
 	private WebElementFinder finder = GuiceInjectFactory.instance().getObjectInstance(WebElementFinder.class);
 
-	public SeleniumElement(WebElement element) {
-		GuiceInjectFactory.instance().injectToClass(this);
+	@Inject
+	public SeleniumElement(@Assisted WebElement element) {
 		this.parentElement = element;
 	}
 
@@ -27,10 +29,6 @@ public class SeleniumElement implements TAElement {
 
 	public void setParentElement(WebElement parentElement) {
 		this.parentElement = parentElement;
-	}
-
-	public SeleniumElement() {
-		GuiceInjectFactory.instance().injectToClass(this);
 	}
 
 	@Override

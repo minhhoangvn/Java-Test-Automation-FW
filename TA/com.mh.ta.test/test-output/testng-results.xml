@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6339" started-at="2017-08-06T15:26:43Z" finished-at="2017-08-06T15:26:49Z">
+  <suite name="Default suite" duration-ms="5352" started-at="2017-08-06T16:59:39Z" finished-at="2017-08-06T16:59:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6339" started-at="2017-08-06T15:26:43Z" finished-at="2017-08-06T15:26:49Z">
+    <test name="Default test" duration-ms="5352" started-at="2017-08-06T16:59:39Z" finished-at="2017-08-06T16:59:44Z">
       <class name="com.mh.ta.guice.TestPerson">
-        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@271053e1]" name="setUpTest" is-config="true" duration-ms="2564" started-at="2017-08-06T22:26:43Z" finished-at="2017-08-06T22:26:45Z">
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@42dafa95]" name="setUpTest" is-config="true" duration-ms="2631" started-at="2017-08-06T23:59:39Z" finished-at="2017-08-06T23:59:41Z">
           <params>
             <param index="0">
               <value>
@@ -26,11 +26,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpTest -->
-        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@271053e1]" name="testLoginPage" duration-ms="2945" started-at="2017-08-06T22:26:45Z" finished-at="2017-08-06T22:26:48Z">
+        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@42dafa95]" name="testLoginPage" duration-ms="1888" started-at="2017-08-06T23:59:41Z" finished-at="2017-08-06T23:59:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginPage -->
-        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@271053e1]" name="cleanUpTest" is-config="true" duration-ms="818" started-at="2017-08-06T22:26:48Z" finished-at="2017-08-06T22:26:49Z">
+        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@42dafa95]" name="cleanUpTest" is-config="true" duration-ms="820" started-at="2017-08-06T23:59:43Z" finished-at="2017-08-06T23:59:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUpTest -->

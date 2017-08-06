@@ -29,7 +29,7 @@ public class TestPerson extends BaseWebTestNG {
 		// Thread.sleep(randomNum);
 		login.clickNext();
 		login.inputPassword();
-		login.printInnerTextListElement();
+		//login.printInnerTextListElement();
 		// System.err.println(Thread.currentThread().getId() + " " + login);
 		// Thread.sleep(4000);
 	}

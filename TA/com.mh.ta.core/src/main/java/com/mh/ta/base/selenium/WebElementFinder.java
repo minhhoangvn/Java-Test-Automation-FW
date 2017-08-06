@@ -19,9 +19,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.mh.ta.base.selenium.webelement.FindBy;
 import com.mh.ta.core.exception.TestContextException;
 import com.mh.ta.factory.DriverFactory;
+import com.mh.ta.factory.GuiceInjectFactory;
 import com.mh.ta.interfaces.element.TAElement;
 
 class WebElementFinder {
+	SeleniumElementFactory elementFactory = GuiceInjectFactory.instance()
+			.getObjectInstance(SeleniumElementFactory.class);
 
 	public TAElement findElementUntilVisible(FindBy by, int timeOut, int pollingTime) {
 		SeleniumDriver drivers = (SeleniumDriver) DriverFactory.getDriver();
@@ -32,7 +35,7 @@ class WebElementFinder {
 			WebDriverWait explicit = new WebDriverWait(driver, timeOut);
 			WebElement element = explicit
 					.until(ExpectedConditions.visibilityOfElementLocated(convertToSeleniumBy.apply(by)));
-			return new SeleniumElement(element);
+			return elementFactory.create(element);
 		});
 	}
 
@@ -41,7 +44,8 @@ class WebElementFinder {
 	}
 
 	public List<TAElement> findListElement(FindBy by) {
-		return findListSeleniumElement.apply(by).stream().map(SeleniumElement::new).collect(Collectors.toList());
+		return findListSeleniumElement.apply(by).stream().map(element -> elementFactory.create(element))
+				.collect(Collectors.toList());
 	}
 
 	private Function<FindBy, By> convertToSeleniumBy = (by) -> {
