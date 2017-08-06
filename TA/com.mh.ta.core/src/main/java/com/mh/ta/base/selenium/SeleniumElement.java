@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import com.mh.ta.base.selenium.webelement.FindBy;
 import com.mh.ta.core.annotation.HighLightElement;
 import com.mh.ta.factory.GuiceInjectFactory;
-import com.mh.ta.factory.SeleniumDriverFactory;
+import com.mh.ta.factory.DriverFactory;
 import com.mh.ta.interfaces.element.TAElement;
 
 public class SeleniumElement implements TAElement {
@@ -60,7 +60,7 @@ public class SeleniumElement implements TAElement {
 
 	@Override
 	public void setElementAttribute(String key, String value) {
-		SeleniumDriver driver = SeleniumDriverFactory.getSeleniumDriver();
+		SeleniumDriver driver = (SeleniumDriver) DriverFactory.getDriver();
 		String js = format("arguments[0].setAttribute('%s',arguments[1]);", key);
 		driver.executeJavaScript(js, parentElement, value);
 	}
@@ -136,7 +136,7 @@ public class SeleniumElement implements TAElement {
 
 	@Override
 	public void highlightElement(String borderColor, String backgroundColor, int timeOut) {
-		SeleniumDriver driver = SeleniumDriverFactory.getSeleniumDriver();
+		SeleniumDriver driver = (SeleniumDriver) DriverFactory.getDriver();
 		String orig = this.parentElement.getAttribute("style");
 		driver.executeJavaScript(format("arguments[0].setAttribute('%s',arguments[1]);", "style"), this.parentElement,
 				format("border: 3px solid %s; background-color: %s;", borderColor, backgroundColor));

@@ -6,12 +6,13 @@ import com.mh.ta.base.selenium.SeleniumDriver;
 import com.mh.ta.core.annotation.ApplicationConfig;
 import com.mh.ta.core.config.MainConfig;
 import com.mh.ta.core.exception.TestContextException;
+import com.mh.ta.interfaces.driver.IDriver;
 
-public class SeleniumDriverFactory {
-	static ThreadLocal<SeleniumDriver> driverManagerStorage = new ThreadLocal<SeleniumDriver>();
+public class DriverFactory {
+	static ThreadLocal<IDriver<?>> driverManagerStorage = new ThreadLocal<IDriver<?>>();
 	private static MainConfig config;
 
-	public static void createSeleniumWebDriver(String driverType) {
+	public static void createDriver(String driverType) {
 		if (driverManagerStorage.get() == null) {
 			SeleniumDriver driverManager = GuiceInjectFactory.instance().getObjectInstance(SeleniumDriver.class);
 			driverManager.createDriver(driverType);
@@ -20,14 +21,14 @@ public class SeleniumDriverFactory {
 		}
 	}
 
-	public static SeleniumDriver getSeleniumDriver() {
+	public static IDriver<?> getDriver() {
 		if (driverManagerStorage.get() == null) {
 			throw new TestContextException("Call createSeleniumDriver before can get driver");
 		}
 		return driverManagerStorage.get();
 	}
 
-	public static void diposeSeleniumDriver() {
+	public static void diposeDriver() {
 		if (driverManagerStorage.get() != null)
 			driverManagerStorage.get().diposeDriver();
 		driverManagerStorage.remove();

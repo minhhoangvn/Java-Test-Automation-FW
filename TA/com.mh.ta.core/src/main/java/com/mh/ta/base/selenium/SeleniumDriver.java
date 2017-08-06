@@ -19,14 +19,14 @@ import com.mh.ta.base.selenium.webdriver.BrowserDriver;
 import com.mh.ta.base.selenium.webdriver.Browsers;
 import com.mh.ta.base.selenium.webelement.FindBy;
 import com.mh.ta.factory.GuiceInjectFactory;
-import com.mh.ta.interfaces.driver.Driver;
+import com.mh.ta.interfaces.driver.IDriver;
 import com.mh.ta.interfaces.element.TAElement;
 
-public class SeleniumDriver implements Driver<WebDriver> {
+public class SeleniumDriver implements IDriver<WebDriver> {
 
 	private ChromeOptions options;
 	private DesiredCapabilities capabilities;
-	private static ThreadLocal<WebDriver> driverStorage = new ThreadLocal<WebDriver>();
+	private WebDriver webDriver;
 	private WebElementFinder finder = GuiceInjectFactory.instance().getObjectInstance(WebElementFinder.class);
 
 	private ChromeOptions getOptions() {
@@ -59,35 +59,35 @@ public class SeleniumDriver implements Driver<WebDriver> {
 
 	@Override
 	public String getPageTitle() {
-		return driverStorage.get().getTitle();
+		return webDriver.getTitle();
 	}
 
 	@Override
 	public String getPageSource() {
-		return driverStorage.get().getPageSource();
+		return webDriver.getPageSource();
 	}
 
 	@Override
 	public String executeJavaScript(String sourceScript, Object... args) {
-		JavascriptExecutor js = (JavascriptExecutor) driverStorage.get();
+		JavascriptExecutor js = (JavascriptExecutor) webDriver;
 		return (String) js.executeScript(sourceScript, args);
 	}
 
 	@Override
 	public void clearAllCookie() {
-		Options windows = driverStorage.get().manage();
+		Options windows = webDriver.manage();
 		windows.deleteAllCookies();
 	}
 
 	@Override
 	public Cookie getCookieValue(String key) {
-		Options windows = driverStorage.get().manage();
+		Options windows = webDriver.manage();
 		return windows.getCookieNamed(key);
 	}
 
 	@Override
 	public Set<Cookie> getAllCookieValue() {
-		Options windows = driverStorage.get().manage();
+		Options windows = webDriver.manage();
 		return windows.getCookies();
 	}
 
@@ -96,7 +96,7 @@ public class SeleniumDriver implements Driver<WebDriver> {
 		String domain = this.executeJavaScript("return document.domain");
 		Cookie cookie = new Cookie.Builder(key, value).domain(domain).expiresOn(DateUtils.addYears(new Date(), 1))
 				.isHttpOnly(true).isSecure(false).build();
-		Options windows = driverStorage.get().manage();
+		Options windows = webDriver.manage();
 		windows.addCookie(cookie);
 
 	}
@@ -115,48 +115,48 @@ public class SeleniumDriver implements Driver<WebDriver> {
 
 	@Override
 	public String getCurrentWindowsHandle() {
-		return driverStorage.get().getWindowHandle();
+		return webDriver.getWindowHandle();
 	}
 
 	@Override
 	public Set<String> getListWindowsHandle() {
-		return driverStorage.get().getWindowHandles();
+		return webDriver.getWindowHandles();
 	}
 
 	@Override
 	public void setWindowsSize(int width, int height) {
-		Options windows = driverStorage.get().manage();
+		Options windows = webDriver.manage();
 		windows.window().setSize(new Dimension(width, height));
 	}
 
 	@Override
 	public void maximizeWindows() {
-		Options windows = driverStorage.get().manage();
+		Options windows = webDriver.manage();
 		windows.window().maximize();
 	}
 
 	@Override
 	public void hiddenWindows() {
-		Options windows = driverStorage.get().manage();
+		Options windows = webDriver.manage();
 		windows.window().setPosition(new org.openqa.selenium.Point(0, -2000));
 	}
 
 	@Override
 	public void navigateToUrl(String url) {
-		Navigation navigate = driverStorage.get().navigate();
+		Navigation navigate = webDriver.navigate();
 		navigate.to(url);
 
 	}
 
 	@Override
 	public void navigateBack() {
-		Navigation navigate = driverStorage.get().navigate();
+		Navigation navigate = webDriver.navigate();
 		navigate.back();
 	}
 
 	@Override
 	public void navigateForward() {
-		Navigation navigate = driverStorage.get().navigate();
+		Navigation navigate = webDriver.navigate();
 		navigate.forward();
 	}
 
@@ -174,9 +174,9 @@ public class SeleniumDriver implements Driver<WebDriver> {
 
 	@Override
 	public void diposeDriver() {
-		if (driverStorage.get() != null)
-			driverStorage.get().quit();
-		driverStorage.remove();
+		if (webDriver != null)
+			webDriver.quit();
+		webDriver = null;
 	}
 
 	private void createLocalDriver(String driverType) {
@@ -184,8 +184,7 @@ public class SeleniumDriver implements Driver<WebDriver> {
 		BrowserDriver<WebDriver> driverCreator = GuiceInjectFactory.instance().getObjectInstance(browserClass);
 		driverCreator.setCapabilities(this.getCapabilities());
 		driverCreator.setDriverOptions(this.getOptions());
-		WebDriver webDriver = driverCreator.createDriver();
-		driverStorage.set(webDriver);
+		webDriver = driverCreator.createDriver();
 	}
 
 	private void createRemoteDriver() {
@@ -195,13 +194,13 @@ public class SeleniumDriver implements Driver<WebDriver> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T getWindowsAction() {
-		Actions action = new Actions(driverStorage.get());
+		Actions action = new Actions(webDriver);
 		return (T) action;
 	}
 
 	@Override
-	public WebDriver getDriver() {
-		return driverStorage.get();
+	public WebDriver getCoreDriver() {
+		return webDriver;
 	}
 
 	@Override

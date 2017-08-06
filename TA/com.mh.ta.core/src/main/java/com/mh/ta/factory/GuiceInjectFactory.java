@@ -5,35 +5,41 @@ import com.google.inject.Injector;
 import com.google.inject.Module;
 
 public class GuiceInjectFactory {
-	private static Injector inject = Guice.createInjector();
-	private static GuiceInjectFactory insatnce;
+	private Injector inject = Guice.createInjector();
+	private static ThreadLocal<GuiceInjectFactory> instance = new ThreadLocal<GuiceInjectFactory>();
 
 	private GuiceInjectFactory() {
 
 	}
 
 	public static GuiceInjectFactory instance() {
-		if (insatnce == null)
+		if (instance.get() == null)
 			synchronized (GuiceInjectFactory.class) {
-				if (insatnce == null)
-					insatnce = new GuiceInjectFactory();
+				if (instance.get() == null) {
+					instance.set(new GuiceInjectFactory());
+					instance.get().inject = Guice.createInjector();
+				}
 			}
-		return insatnce;
+
+		return instance.get();
 	}
 
 	public Injector getInject() {
-		return inject;
+		return instance.get().inject;
 	}
 
 	public void injectToClass(Object object) {
-		inject.injectMembers(object);
+		instance.get().inject.injectMembers(object);
 	}
 
 	public void createInject(Module module) {
+		Injector inject = instance.get().inject;
 		inject = inject.createChildInjector(module);
+		instance.get().inject = inject;
+
 	}
 
 	public <T> T getObjectInstance(Class<T> cls) {
-		return inject.getInstance(cls);
+		return instance.get().inject.getInstance(cls);
 	}
 }

@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" parallel="tests">
-  <parameter name="configFile" value="application.yaml"/>
-  <test name="exampletest1(failed)" parallel="tests">
-    <parameter name="gridServerOptions" value="Grid server value 1 and long long "/>
+  <test name="exampletest2(failed)" parallel="tests">
+    <parameter name="gridServerOptions" value="Grid server value 2 2 2 and long long "/>
     <parameter name="browser" value="chrome"/>
+    <parameter name="configFile" value="application2.yaml"/>
     <classes>
       <class name="com.mh.ta.guice.TestPerson">
         <methods>
-          <include name="cleanUpSuite"/>
-          <include name="setUpSuites"/>
+          <include name="testLoginPage"/>
+          <include name="cleanUpTest"/>
+          <include name="setUpTest"/>
+        </methods>
+      </class> <!-- com.mh.ta.guice.TestPerson -->
+    </classes>
+  </test> <!-- exampletest2(failed) -->
+  <test name="exampletest1(failed)" parallel="tests">
+    <parameter name="gridServerOptions" value="Grid server value 1 and long long "/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="configFile" value="application.yaml"/>
+    <classes>
+      <class name="com.mh.ta.guice.TestPerson">
+        <methods>
           <include name="testLoginPage"/>
           <include name="cleanUpTest"/>
           <include name="setUpTest"/>

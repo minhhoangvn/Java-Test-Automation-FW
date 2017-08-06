@@ -1,9 +1,4 @@
-package com.mh.ta.core.browsers;
-
-import com.mh.ta.base.browsers.Chrome;
-import com.mh.ta.base.browsers.Firefox;
-import com.mh.ta.base.browsers.IE;
-import com.mh.ta.base.browsers.Remote;
+package com.mh.ta.base.selenium.webdriver;
 import com.mh.ta.interfaces.driver.IDriver;
 
 public enum BrowserType {

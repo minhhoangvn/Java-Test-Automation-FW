@@ -12,5 +12,5 @@ public @interface HighLightElement {
 
 	public String backgroundColor() default "yellow";
 
-	public int timeoutInMs() default (500);
+	public int timeoutInMs() default (200);
 }

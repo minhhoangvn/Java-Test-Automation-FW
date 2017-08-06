@@ -1,67 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+<testng-results skipped="0" failed="0" ignored="4" total="12" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="8704" started-at="2017-08-06T11:44:12Z" finished-at="2017-08-06T11:44:20Z">
+  <suite name="Suite1" duration-ms="31477" started-at="2017-08-06T13:19:44Z" finished-at="2017-08-06T13:20:15Z">
     <groups>
     </groups>
-    <test name="exampletest1" duration-ms="8704" started-at="2017-08-06T11:44:12Z" finished-at="2017-08-06T11:44:20Z">
+    <test name="exampletest4" duration-ms="21242" started-at="2017-08-06T13:19:44Z" finished-at="2017-08-06T13:20:05Z">
       <class name="com.mh.ta.guice.TestPerson">
-        <test-method status="PASS" signature="injectDependency()[pri:0, instance:com.mh.ta.guice.TestPerson@69ea3742]" name="injectDependency" is-config="true" duration-ms="10" started-at="2017-08-06T18:44:12Z" finished-at="2017-08-06T18:44:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- injectDependency -->
-        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@69ea3742]" name="setUpTest" is-config="true" duration-ms="2326" started-at="2017-08-06T18:44:12Z" finished-at="2017-08-06T18:44:14Z">
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@56235b8e]" name="setUpTest" is-config="true" duration-ms="3996" started-at="2017-08-06T20:19:44Z" finished-at="2017-08-06T20:19:48Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[application2.yaml]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Grid server value 1 and long long ]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpTest -->
-        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@69ea3742]" name="testLoginPage" duration-ms="5471" started-at="2017-08-06T18:44:14Z" finished-at="2017-08-06T18:44:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLoginPage -->
-        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@69ea3742]" name="cleanUpTest" is-config="true" duration-ms="887" started-at="2017-08-06T18:44:19Z" finished-at="2017-08-06T18:44:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUpTest -->
-      </class> <!-- com.mh.ta.guice.TestPerson -->
-    </test> <!-- exampletest1 -->
-    <test name="exampletest2" duration-ms="8704" started-at="2017-08-06T11:44:12Z" finished-at="2017-08-06T11:44:20Z">
-      <class name="com.mh.ta.guice.TestPerson">
-        <test-method status="PASS" signature="setUpSuites(java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@66480dd7]" name="setUpSuites" is-config="true" duration-ms="327" started-at="2017-08-06T18:44:11Z" finished-at="2017-08-06T18:44:12Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[application.yaml]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpSuites -->
-        <test-method status="PASS" signature="injectDependency()[pri:0, instance:com.mh.ta.guice.TestPerson@66480dd7]" name="injectDependency" is-config="true" duration-ms="10" started-at="2017-08-06T18:44:12Z" finished-at="2017-08-06T18:44:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- injectDependency -->
-        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@66480dd7]" name="setUpTest" is-config="true" duration-ms="2326" started-at="2017-08-06T18:44:12Z" finished-at="2017-08-06T18:44:14Z">
-          <params>
-            <param index="0">
-              <value>
                 <![CDATA[chrome]]>
               </value>
             </param>
-            <param index="1">
+            <param index="2">
               <value>
                 <![CDATA[Grid server value 2 2 2 and long long ]]>
               </value>
@@ -70,18 +28,229 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpTest -->
-        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@66480dd7]" name="testLoginPage" duration-ms="5526" started-at="2017-08-06T18:44:14Z" finished-at="2017-08-06T18:44:19Z">
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@56235b8e]" name="setUpTest" is-config="true" duration-ms="3976" started-at="2017-08-06T20:19:44Z" finished-at="2017-08-06T20:19:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application2.yaml]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Grid server value 2 2 2 and long long ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@56235b8e]" name="testLoginPage" duration-ms="14241" started-at="2017-08-06T20:19:48Z" finished-at="2017-08-06T20:20:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginPage -->
-        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@66480dd7]" name="cleanUpTest" is-config="true" duration-ms="831" started-at="2017-08-06T18:44:19Z" finished-at="2017-08-06T18:44:20Z">
+        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@56235b8e]" name="testLoginPage" duration-ms="16475" started-at="2017-08-06T20:19:48Z" finished-at="2017-08-06T20:20:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPage -->
+        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@56235b8e]" name="cleanUpTest" is-config="true" duration-ms="749" started-at="2017-08-06T20:20:02Z" finished-at="2017-08-06T20:20:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUpTest -->
-        <test-method status="PASS" signature="cleanUpSuite()[pri:0, instance:com.mh.ta.guice.TestPerson@66480dd7]" name="cleanUpSuite" is-config="true" duration-ms="0" started-at="2017-08-06T18:44:20Z" finished-at="2017-08-06T18:44:20Z">
+        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@56235b8e]" name="cleanUpTest" is-config="true" duration-ms="753" started-at="2017-08-06T20:20:04Z" finished-at="2017-08-06T20:20:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cleanUpSuite -->
+        </test-method> <!-- cleanUpTest -->
+      </class> <!-- com.mh.ta.guice.TestPerson -->
+    </test> <!-- exampletest4 -->
+    <test name="exampletest1" duration-ms="25693" started-at="2017-08-06T13:19:44Z" finished-at="2017-08-06T13:20:10Z">
+      <class name="com.mh.ta.guice.TestPerson">
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@ff5b51f]" name="setUpTest" is-config="true" duration-ms="3981" started-at="2017-08-06T20:19:44Z" finished-at="2017-08-06T20:19:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application.yaml]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Grid server value 1 and long long ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@ff5b51f]" name="setUpTest" is-config="true" duration-ms="4010" started-at="2017-08-06T20:19:44Z" finished-at="2017-08-06T20:19:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application.yaml]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Grid server value 1 and long long ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@ff5b51f]" name="testLoginPage" duration-ms="20938" started-at="2017-08-06T20:19:48Z" finished-at="2017-08-06T20:20:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPage -->
+        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@ff5b51f]" name="testLoginPage" duration-ms="17280" started-at="2017-08-06T20:19:48Z" finished-at="2017-08-06T20:20:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPage -->
+        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@ff5b51f]" name="cleanUpTest" is-config="true" duration-ms="749" started-at="2017-08-06T20:20:05Z" finished-at="2017-08-06T20:20:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpTest -->
+        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@ff5b51f]" name="cleanUpTest" is-config="true" duration-ms="757" started-at="2017-08-06T20:20:09Z" finished-at="2017-08-06T20:20:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpTest -->
+      </class> <!-- com.mh.ta.guice.TestPerson -->
+    </test> <!-- exampletest1 -->
+    <test name="exampletest3" duration-ms="27557" started-at="2017-08-06T13:19:44Z" finished-at="2017-08-06T13:20:12Z">
+      <class name="com.mh.ta.guice.TestPerson">
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@5ec0a365]" name="setUpTest" is-config="true" duration-ms="3532" started-at="2017-08-06T20:19:44Z" finished-at="2017-08-06T20:19:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application2.yaml]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Grid server value 2 2 2 and long long ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@5ec0a365]" name="setUpTest" is-config="true" duration-ms="3331" started-at="2017-08-06T20:19:44Z" finished-at="2017-08-06T20:19:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application2.yaml]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Grid server value 2 2 2 and long long ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@5ec0a365]" name="testLoginPage" duration-ms="13437" started-at="2017-08-06T20:19:47Z" finished-at="2017-08-06T20:20:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPage -->
+        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@5ec0a365]" name="testLoginPage" duration-ms="23313" started-at="2017-08-06T20:19:48Z" finished-at="2017-08-06T20:20:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPage -->
+        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@5ec0a365]" name="cleanUpTest" is-config="true" duration-ms="804" started-at="2017-08-06T20:20:01Z" finished-at="2017-08-06T20:20:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpTest -->
+        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@5ec0a365]" name="cleanUpTest" is-config="true" duration-ms="695" started-at="2017-08-06T20:20:11Z" finished-at="2017-08-06T20:20:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpTest -->
+      </class> <!-- com.mh.ta.guice.TestPerson -->
+    </test> <!-- exampletest3 -->
+    <test name="exampletest2" duration-ms="31477" started-at="2017-08-06T13:19:44Z" finished-at="2017-08-06T13:20:15Z">
+      <class name="com.mh.ta.guice.TestPerson">
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@a67c67e]" name="setUpTest" is-config="true" duration-ms="3959" started-at="2017-08-06T20:19:44Z" finished-at="2017-08-06T20:19:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application2.yaml]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Grid server value 2 2 2 and long long ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mh.ta.guice.TestPerson@a67c67e]" name="setUpTest" is-config="true" duration-ms="3985" started-at="2017-08-06T20:19:44Z" finished-at="2017-08-06T20:19:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[application2.yaml]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Grid server value 2 2 2 and long long ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@a67c67e]" name="testLoginPage" duration-ms="16407" started-at="2017-08-06T20:19:48Z" finished-at="2017-08-06T20:20:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPage -->
+        <test-method status="PASS" signature="testLoginPage()[pri:0, instance:com.mh.ta.guice.TestPerson@a67c67e]" name="testLoginPage" duration-ms="26780" started-at="2017-08-06T20:19:48Z" finished-at="2017-08-06T20:20:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPage -->
+        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@a67c67e]" name="cleanUpTest" is-config="true" duration-ms="766" started-at="2017-08-06T20:20:04Z" finished-at="2017-08-06T20:20:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpTest -->
+        <test-method status="PASS" signature="cleanUpTest()[pri:0, instance:com.mh.ta.guice.TestPerson@a67c67e]" name="cleanUpTest" is-config="true" duration-ms="695" started-at="2017-08-06T20:20:15Z" finished-at="2017-08-06T20:20:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpTest -->
       </class> <!-- com.mh.ta.guice.TestPerson -->
     </test> <!-- exampletest2 -->
   </suite> <!-- Suite1 -->

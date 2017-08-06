@@ -16,14 +16,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.mh.ta.base.selenium.webelement.FindBy;
 import com.mh.ta.core.exception.TestContextException;
-import com.mh.ta.factory.SeleniumDriverFactory;
+import com.mh.ta.factory.DriverFactory;
 import com.mh.ta.interfaces.element.TAElement;
 
 class WebElementFinder {
 
 	public TAElement findElementUntilVisible(FindBy by, int timeOut, int pollingTime) {
-		SeleniumDriver drivers = SeleniumDriverFactory.getSeleniumDriver();
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(drivers.getDriver()).withTimeout(timeOut, TimeUnit.SECONDS)
+		SeleniumDriver drivers = (SeleniumDriver) DriverFactory.getDriver();
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(drivers.getCoreDriver()).withTimeout(timeOut, TimeUnit.SECONDS)
 				.pollingEvery(pollingTime, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class, WebDriverException.class);
 		return wait.until((driver) -> {
@@ -34,14 +34,14 @@ class WebElementFinder {
 	}
 
 	public TAElement findElement(FindBy by) {
-		SeleniumDriver driver = SeleniumDriverFactory.getSeleniumDriver();
-		WebElement element = driver.getDriver().findElement(convertToSeleniumBy(by));
+		SeleniumDriver driver = (SeleniumDriver) DriverFactory.getDriver();
+		WebElement element = driver.getCoreDriver().findElement(convertToSeleniumBy(by));
 		return new SeleniumElement(element);
 	}
 
 	public List<TAElement> findListElement(FindBy by) {
-		SeleniumDriver driver = SeleniumDriverFactory.getSeleniumDriver();
-		return driver.getDriver().findElements(convertToSeleniumBy(by)).stream().map(SeleniumElement::new)
+		SeleniumDriver driver = (SeleniumDriver) DriverFactory.getDriver();
+		return driver.getCoreDriver().findElements(convertToSeleniumBy(by)).stream().map(SeleniumElement::new)
 				.collect(Collectors.toList());
 	}
 

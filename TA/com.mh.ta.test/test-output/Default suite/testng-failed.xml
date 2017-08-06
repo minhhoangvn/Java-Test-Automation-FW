@@ -6,9 +6,7 @@
     <classes>
       <class name="com.mh.ta.guice.TestPerson">
         <methods>
-          <include name="cleanUpSuite"/>
-          <include name="setUpSuites"/>
-          <include name="test"/>
+          <include name="testLoginPage"/>
           <include name="cleanUpTest"/>
           <include name="setUpTest"/>
         </methods>
