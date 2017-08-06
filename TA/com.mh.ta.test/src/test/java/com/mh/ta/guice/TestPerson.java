@@ -1,6 +1,5 @@
 package com.mh.ta.guice;
 
-import java.util.concurrent.ThreadLocalRandom;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -8,8 +7,8 @@ import com.google.inject.Inject;
 import com.mh.ta.base.selenium.SeleniumDriver;
 import com.mh.ta.base.selenium.webelement.FindBy;
 import com.mh.ta.base.test.BaseWebTestNG;
-import com.mh.ta.factory.GuiceInjectFactory;
 import com.mh.ta.factory.DriverFactory;
+import com.mh.ta.factory.GuiceInjectFactory;
 import com.mh.ta.interfaces.element.TAElement;
 import com.mh.ta.test.pages.LoginPage;
 

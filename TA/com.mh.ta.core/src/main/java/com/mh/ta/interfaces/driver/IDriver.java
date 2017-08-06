@@ -1,6 +1,6 @@
 package com.mh.ta.interfaces.driver;
 
-public interface IDriver<Type> extends IFinder, IBrowser, IWebStorage, IWindows, INavigation {
+public interface IDriver<Type> extends IFinder {
 
 	public void createDriver(String driverType);
 

@@ -19,10 +19,14 @@ import com.mh.ta.base.selenium.webdriver.BrowserDriver;
 import com.mh.ta.base.selenium.webdriver.Browsers;
 import com.mh.ta.base.selenium.webelement.FindBy;
 import com.mh.ta.factory.GuiceInjectFactory;
+import com.mh.ta.interfaces.driver.IBrowser;
 import com.mh.ta.interfaces.driver.IDriver;
+import com.mh.ta.interfaces.driver.INavigation;
+import com.mh.ta.interfaces.driver.IWebStorage;
+import com.mh.ta.interfaces.driver.IWindows;
 import com.mh.ta.interfaces.element.TAElement;
 
-public class SeleniumDriver implements IDriver<WebDriver> {
+public class SeleniumDriver implements IDriver<WebDriver>, IBrowser, IWebStorage, IWindows, INavigation {
 
 	private ChromeOptions options;
 	private DesiredCapabilities capabilities;

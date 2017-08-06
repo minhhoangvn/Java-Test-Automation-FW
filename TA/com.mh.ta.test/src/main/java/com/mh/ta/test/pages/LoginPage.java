@@ -7,7 +7,7 @@ public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 
 	public LoginPage goToLoginPage() {
 		
-		this.driver.get().get("https://accounts.google.com/signin/v2");
+		this.driver.get().navigateToUrl("https://accounts.google.com/signin/v2");
 		return this;
 	}
 

@@ -1,15 +1,8 @@
 package com.mh.ta.base.appium;
 
-import static java.lang.String.format;
-
 import java.util.List;
 
-import org.openqa.selenium.WebElement;
-
 import com.mh.ta.base.selenium.webelement.FindBy;
-import com.mh.ta.core.annotation.HighLightElement;
-import com.mh.ta.factory.GuiceInjectFactory;
-import com.mh.ta.factory.DriverFactory;
 import com.mh.ta.interfaces.element.TAElement;
 
 public class MobileElement implements TAElement {
