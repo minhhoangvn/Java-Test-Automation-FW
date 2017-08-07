@@ -16,7 +16,7 @@ import com.mh.ta.interfaces.element.TAElement;
 
 public class SeleniumElement implements TAElement {
 	protected WebElement parentElement;
-	private WebElementFinder finder = GuiceInjectFactory.instance().getObjectInstance(WebElementFinder.class);
+	private SeleniumElementFinder finder = GuiceInjectFactory.instance().getObjectInstance(SeleniumElementFinder.class);
 
 	@Inject
 	public SeleniumElement(@Assisted WebElement element) {

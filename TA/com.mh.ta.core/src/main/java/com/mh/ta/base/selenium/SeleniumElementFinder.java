@@ -22,7 +22,7 @@ import com.mh.ta.factory.DriverFactory;
 import com.mh.ta.factory.GuiceInjectFactory;
 import com.mh.ta.interfaces.element.TAElement;
 
-class WebElementFinder {
+class SeleniumElementFinder {
 	SeleniumElementFactory elementFactory = GuiceInjectFactory.instance()
 			.getObjectInstance(SeleniumElementFactory.class);
 
@@ -40,7 +40,7 @@ class WebElementFinder {
 	}
 
 	public TAElement findElement(FindBy by) {
-		return new SeleniumElement(findSeleniumElement.apply(by));
+		return elementFactory.create(findSeleniumElement.apply(by));
 	}
 
 	public List<TAElement> findListElement(FindBy by) {

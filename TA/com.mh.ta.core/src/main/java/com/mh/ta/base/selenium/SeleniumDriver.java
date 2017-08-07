@@ -31,7 +31,7 @@ public class SeleniumDriver implements IDriver<WebDriver>, IBrowser, IWebStorage
 	private ChromeOptions options;
 	private DesiredCapabilities capabilities;
 	private WebDriver webDriver;
-	private WebElementFinder finder = GuiceInjectFactory.instance().getObjectInstance(WebElementFinder.class);
+	private SeleniumElementFinder finder = GuiceInjectFactory.instance().getObjectInstance(SeleniumElementFinder.class);
 
 	private ChromeOptions getOptions() {
 		return options;

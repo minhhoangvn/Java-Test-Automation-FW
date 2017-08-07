@@ -12,7 +12,7 @@
 	</test>
 	<test name="exampletest2">
 		<parameter name="browser" value="chrome"></parameter>
-		<parameter name="configFile" value="application2.yaml"></parameter>
+		<parameter name="configFile" value="application.yaml"></parameter>
 		<parameter name="gridServerOptions" value="Grid server value 2 2 2 and long long "></parameter>
 		<classes>
 			<class name="com.mh.ta.guice.TestPerson" />

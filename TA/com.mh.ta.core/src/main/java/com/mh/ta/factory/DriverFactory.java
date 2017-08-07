@@ -23,7 +23,7 @@ public class DriverFactory {
 
 	public static IDriver<?> getDriver() {
 		if (driverManagerStorage.get() == null) {
-			throw new TestContextException("Call createSeleniumDriver before can get driver");
+			throw new TestContextException("Call createDriver method before can get driver");
 		}
 		return driverManagerStorage.get();
 	}
@@ -38,6 +38,7 @@ public class DriverFactory {
 		try {
 			Injector injector = GuiceInjectFactory.instance().getInject();
 			config = injector.getInstance(Key.get(MainConfig.class, ApplicationConfig.class));
+			System.err.println("Get report folder name "+config.getReportConfig().getReportFolder());
 		} catch (Exception e) {
 			throw new TestContextException(e);
 		}
