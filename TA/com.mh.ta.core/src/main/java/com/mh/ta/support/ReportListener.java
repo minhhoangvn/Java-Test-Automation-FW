@@ -88,7 +88,12 @@ public class ReportListener implements ITestListener {
 		ExtentTest testResult = suites.createNode(result.getMethod().getMethodName());
 		appendTestReportInformation(result, testResult);
 		testResult.skip(result.getThrowable());
-		stopRecord(result, testResult);
+		/*
+		 * Check in case skipped in test running in parallel 
+		 * and record not start
+		 */
+		if (recordStorage.get() != null)
+			stopRecord(result, testResult);
 	}
 
 	@Override
@@ -138,10 +143,9 @@ public class ReportListener implements ITestListener {
 		test.info(MarkupHelper.createLabel(Arrays.toString(testInfo.toArray()), ExtentColor.BLUE));
 	}
 
-
 	private synchronized void captureScreenShotIfFailedOnGUI(ITestResult result, ExtentTest test) {
 		ITestNGMethod testMethod = result.getMethod();
-		EnableOneTimeConfig oneTimeConfig = getAnnotationTestClass(result,EnableOneTimeConfig.class);
+		EnableOneTimeConfig oneTimeConfig = getAnnotationTestClass(result, EnableOneTimeConfig.class);
 		if (oneTimeConfig != null)
 			if (oneTimeConfig.enableAPITest() != true) {
 				System.err.println("Run Capture screen shot");
@@ -197,7 +201,6 @@ public class ReportListener implements ITestListener {
 
 	private void saveVideo(ITestResult result, ExtentTest test) {
 		RecordVideo record = getAnnotationTestMethod(result, RecordVideo.class);
-		record.saveOnTestStatus();
 		recordStorage.get().stopRecording();
 		TestStatus status = record.saveOnTestStatus();
 		boolean saveAll = status == TestStatus.ALL;
@@ -212,18 +215,18 @@ public class ReportListener implements ITestListener {
 				test.warning("Has error on delete video file");
 		}
 	}
-	
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private <T> T getAnnotationTestMethod(ITestResult result, Class cls){
+	private <T> T getAnnotationTestMethod(ITestResult result, Class cls) {
 		ITestNGMethod testMethod = result.getMethod();
 		ConstructorOrMethod constructorMethod = testMethod.getConstructorOrMethod();
 		Method invokeMethod = constructorMethod.getMethod();
 		T annotation = (T) invokeMethod.getDeclaredAnnotation(cls);
 		return annotation;
 	}
-	
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private <T> T getAnnotationTestClass(ITestResult result, Class cls){
+	private <T> T getAnnotationTestClass(ITestResult result, Class cls) {
 		ITestNGMethod testMethod = result.getMethod();
 		ConstructorOrMethod constructorMethod = testMethod.getConstructorOrMethod();
 		Class invokeTestClass = constructorMethod.getDeclaringClass();
