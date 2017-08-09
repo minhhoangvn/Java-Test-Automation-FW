@@ -3,13 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.mh.ta.guice.TestPerson">
+      <class name="com.mh.test.GUITest">
         <methods>
-          <include name="testLoginPage"/>
+          <include name="testLoginA"/>
           <include name="cleanUpTest"/>
+          <include name="cleanUpSuites"/>
           <include name="setUpTest"/>
+          <include name="setUpSuite"/>
         </methods>
-      </class> <!-- com.mh.ta.guice.TestPerson -->
+      </class> <!-- com.mh.test.GUITest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

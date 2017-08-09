@@ -8,11 +8,11 @@ import com.mh.ta.base.selenium.webelement.FindBy;
 import com.mh.ta.factory.ActionKeywords;
 import com.mh.ta.factory.DriverFactory;
 import com.mh.ta.interfaces.element.TAElement;
-import com.mh.ta.keywords.TAWebKeywords;
+import com.mh.ta.keywords.web.WebKeywords;
 
 public class BaseElements {
 
-	protected TAWebKeywords keywords = ActionKeywords.WebUi();
+	protected WebKeywords keywords = ActionKeywords.WebUi();
 	protected Supplier<SeleniumDriver> driver = () -> {
 		return (SeleniumDriver) DriverFactory.getDriver();
 	};
@@ -20,15 +20,15 @@ public class BaseElements {
 	public BaseElements() {
 	}
 
-	public TAElement findElement(FindBy by) {
+	protected TAElement findElement(FindBy by) {
 		return driver.get().findElement(by);
 	}
 
-	public List<TAElement> findListElement(FindBy by) {
+	protected List<TAElement> findListElement(FindBy by) {
 		return driver.get().findListElement(by);
 	}
 
-	public TAElement findElementUntilVisible(FindBy by, int timeOut, int pollingTime) {
+	protected TAElement findElementUntilVisible(FindBy by, int timeOut, int pollingTime) {
 		return driver.get().findElementUntilVisible(by, timeOut, pollingTime);
 	}
 }

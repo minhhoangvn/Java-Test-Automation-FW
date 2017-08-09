@@ -2,7 +2,9 @@ package com.mh.ta.interfaces.element;
 
 import com.mh.ta.interfaces.driver.IFinder;
 
-public interface TAElement extends IFinder, InputElement, SelectElement, ButtonElement {
+public interface TAElement extends IFinder {
+
+	public <T> T getElement();
 
 	public String getElementAttribute(String key);
 

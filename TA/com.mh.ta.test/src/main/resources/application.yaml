@@ -20,11 +20,11 @@ driverConfig:
   implicitWait: 5
   pageloadTimeout: 60
   drivercommandTimeout: 60
-  hidden: true
-  maximize: true
+  hidden: false
+  maximize: false
 dataSourceConfig:
-  databaseDriver: none
-  databaseConnectionString: none
+  databaseDriver: com.mysql.cj.jdbc.Driver
+  databaseConnectionString:  none
   databaseUserName: none
   databasePassword: none
   testDataFolder: TestData

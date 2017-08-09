@@ -1,5 +1,7 @@
 package com.mh.ta.base.selenium.webelement;
 
+import com.mh.ta.enums.ByType;
+
 public class FindBy {
 	private String locatorValue;
 	private ByType locatorType;

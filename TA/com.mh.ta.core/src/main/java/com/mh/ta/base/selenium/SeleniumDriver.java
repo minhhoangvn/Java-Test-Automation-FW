@@ -1,20 +1,27 @@
 package com.mh.ta.base.selenium;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Navigation;
 import org.openqa.selenium.WebDriver.Options;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.mh.ta.base.selenium.services.SeleniumElementFinder;
 import com.mh.ta.base.selenium.webdriver.BrowserDriver;
 import com.mh.ta.base.selenium.webdriver.Browsers;
 import com.mh.ta.base.selenium.webelement.FindBy;
@@ -28,12 +35,12 @@ import com.mh.ta.interfaces.element.TAElement;
 
 public class SeleniumDriver implements IDriver<WebDriver>, IBrowser, IWebStorage, IWindows, INavigation {
 
-	private ChromeOptions options;
+	private Object options;
 	private DesiredCapabilities capabilities;
 	private WebDriver webDriver;
 	private SeleniumElementFinder finder = GuiceInjectFactory.instance().getObjectInstance(SeleniumElementFinder.class);
 
-	private ChromeOptions getOptions() {
+	private Object getOptions() {
 		return options;
 	}
 
@@ -43,7 +50,7 @@ public class SeleniumDriver implements IDriver<WebDriver>, IBrowser, IWebStorage
 
 	@Override
 	public void setDriverOptions(Object options) {
-		this.options = (ChromeOptions) options;
+		this.options = options;
 	}
 
 	@Override
@@ -118,6 +125,18 @@ public class SeleniumDriver implements IDriver<WebDriver>, IBrowser, IWebStorage
 	}
 
 	@Override
+	public void setImplicitlyWait(int timeOut) {
+		Options windows = webDriver.manage();
+		windows.timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
+	}
+
+	@Override
+	public void setPageLoadTimeOut(int timeOut) {
+		Options windows = webDriver.manage();
+		windows.timeouts().pageLoadTimeout(timeOut, TimeUnit.SECONDS);
+	}
+
+	@Override
 	public String getCurrentWindowsHandle() {
 		return webDriver.getWindowHandle();
 	}
@@ -148,6 +167,7 @@ public class SeleniumDriver implements IDriver<WebDriver>, IBrowser, IWebStorage
 	@Override
 	public void navigateToUrl(String url) {
 		Navigation navigate = webDriver.navigate();
+		url = url.startsWith("http://") || url.startsWith("https://") ? url : "http://" + url;
 		navigate.to(url);
 
 	}
@@ -166,24 +186,6 @@ public class SeleniumDriver implements IDriver<WebDriver>, IBrowser, IWebStorage
 
 	@Override
 	public void createDriver(String driverType) {
-		switch (Browsers.getTypeByString(driverType)) {
-		case REMOTE:
-			this.createRemoteDriver();
-			break;
-		default:
-			this.createLocalDriver(driverType);
-			break;
-		}
-	}
-
-	@Override
-	public void diposeDriver() {
-		if (webDriver != null)
-			webDriver.quit();
-		webDriver = null;
-	}
-
-	private void createLocalDriver(String driverType) {
 		Class<BrowserDriver<WebDriver>> browserClass = Browsers.getClassByString(driverType);
 		BrowserDriver<WebDriver> driverCreator = GuiceInjectFactory.instance().getObjectInstance(browserClass);
 		driverCreator.setCapabilities(this.getCapabilities());
@@ -191,8 +193,11 @@ public class SeleniumDriver implements IDriver<WebDriver>, IBrowser, IWebStorage
 		webDriver = driverCreator.createDriver();
 	}
 
-	private void createRemoteDriver() {
-
+	@Override
+	public void diposeDriver() {
+		if (webDriver != null)
+			webDriver.quit();
+		webDriver = null;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -210,5 +215,19 @@ public class SeleniumDriver implements IDriver<WebDriver>, IBrowser, IWebStorage
 	@Override
 	public TAElement findElementUntilVisible(FindBy by, int timeOut, int pollingTime) {
 		return finder.findElementUntilVisible(by, timeOut, pollingTime);
+	}
+
+	public void captureScreenShot(String filePath, ExtentTest... testReport) {
+		try {
+			File imgFile = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(imgFile, new File(filePath));
+		} catch (IOException e) {
+			if (testReport.length > 0) {
+				for (ExtentTest extentTest : testReport) {
+					extentTest.info("Error in capture screenshot ");
+					extentTest.info(e);
+				}
+			}
+		}
 	}
 }

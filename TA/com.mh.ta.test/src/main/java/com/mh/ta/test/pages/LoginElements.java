@@ -9,10 +9,6 @@ import com.mh.ta.page.BaseElements;
 
 public class LoginElements extends BaseElements {
 
-	public String txtSampleForm() {
-		return "Test Sample";
-	}
-
 	public TAElement txtEmail() {
 		return this.findElement(FindBy.elementId("identifierId"));
 	}

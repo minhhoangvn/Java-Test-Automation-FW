@@ -1,9 +1,9 @@
 package com.mh.ta.keywords;
-
+/**
+ * 
+ * @author hnmin
+ *
+ */
 public class DataBaseKeywords {
-	public String test;
 
-	public DataBaseKeywords(String abc) {
-		this.test = abc;
-	}
 }

@@ -29,7 +29,9 @@
 		<guicemultibinding.version>4.1.0</guicemultibinding.version>
 		<guiceassited.version>4.1.0</guiceassited.version>
 		<extentreport.version>3.0.6</extentreport.version>
+		<apachepoi.version>3.16</apachepoi.version>
 		<snakeyaml.version>1.18</snakeyaml.version>
 		<mavencompiler.version>3.6.1</mavencompiler.version>
 	</properties>
+
 </project>

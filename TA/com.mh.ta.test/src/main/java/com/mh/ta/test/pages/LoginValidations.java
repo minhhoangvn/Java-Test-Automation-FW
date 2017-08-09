@@ -7,8 +7,4 @@ public class LoginValidations extends BaseValidations<LoginElements> {
 	public Boolean shouldShowPassowdField() {
 		return true;
 	}
-
-	public String shouldReturnSample() {
-		return this.Elements().txtSampleForm() + " in validation class";
-	}
 }

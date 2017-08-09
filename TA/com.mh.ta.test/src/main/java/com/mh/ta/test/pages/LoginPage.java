@@ -25,10 +25,6 @@ public class LoginPage extends BasePage<LoginElements, LoginValidations> {
 		this.keywords.intputTextToElement(this.Elements().txtPassword(), "minhquanvn2171990");
 		return this;
 	}
-
-	public String testElementPage() {
-		return this.Elements().txtSampleForm();
-	}
 	
 	public void printInnerTextListElement(){
 		for(TAElement element : this.Elements().sampleListElement()){

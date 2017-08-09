@@ -8,10 +8,10 @@ import org.openqa.selenium.WebElement;
 
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
+import com.mh.ta.base.selenium.services.SeleniumElementFinder;
 import com.mh.ta.base.selenium.webelement.FindBy;
-import com.mh.ta.core.annotation.HighLightElement;
-import com.mh.ta.factory.GuiceInjectFactory;
 import com.mh.ta.factory.DriverFactory;
+import com.mh.ta.factory.GuiceInjectFactory;
 import com.mh.ta.interfaces.element.TAElement;
 
 public class SeleniumElement implements TAElement {
@@ -33,12 +33,12 @@ public class SeleniumElement implements TAElement {
 
 	@Override
 	public TAElement findElement(FindBy by) {
-		return finder.findElement(by);
+		return finder.findElementContex(this.parentElement, by);
 	}
 
 	@Override
 	public List<TAElement> findListElement(FindBy by) {
-		return finder.findListElement(by);
+		return finder.findListElementContex(this.parentElement, by);
 	}
 
 	@Override
@@ -68,68 +68,10 @@ public class SeleniumElement implements TAElement {
 		return this.parentElement.isEnabled();
 	}
 
-	@HighLightElement
-	@Override
-	public void inputTextToElement(String value) {
-		parentElement.sendKeys(value);
-
-	}
 
 	@Override
 	public String getElementText() {
 		return parentElement.getText();
-	}
-
-	@Override
-	public String getInputValue() {
-		return parentElement.getAttribute("value");
-	}
-
-	@Override
-	public void selectByText(String text) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void selectByIndex(int index) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public List<String> getListSelectOptions() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TAElement getSelectedElement() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void deselectAllOptions() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void selectAllOptions() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void clickElement() {
-		this.parentElement.click();
-	}
-
-	@Override
-	public void mouseClickElement() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -149,5 +91,11 @@ public class SeleniumElement implements TAElement {
 	@Override
 	public TAElement findElementUntilVisible(FindBy by, int timeOut, int pollingTime) {
 		return finder.findElementUntilVisible(by, timeOut, pollingTime);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <T> T getElement() {
+		return (T) this.parentElement;
 	}
 }

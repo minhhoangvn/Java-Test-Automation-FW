@@ -8,12 +8,12 @@ import com.mh.ta.core.helper.Constant;
 import com.mh.ta.factory.ActionKeywords;
 import com.mh.ta.factory.DriverFactory;
 import com.mh.ta.factory.GuiceInjectFactory;
-import com.mh.ta.keywords.TAWebKeywords;
+import com.mh.ta.keywords.web.WebKeywords;
 
 public class BaseValidations<E extends BaseElements> {
 
 	private Class<?> elements;
-	protected TAWebKeywords keywords = ActionKeywords.WebUi();
+	protected WebKeywords keywords = ActionKeywords.WebUi();
 	protected Supplier<SeleniumDriver> driver = () -> {
 		return (SeleniumDriver) DriverFactory.getDriver();
 	};
