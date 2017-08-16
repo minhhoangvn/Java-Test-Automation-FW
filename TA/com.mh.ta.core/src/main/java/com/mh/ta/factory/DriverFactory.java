@@ -4,6 +4,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
+import org.apache.commons.collections4.map.LinkedMap;
+
 import com.google.inject.Injector;
 import com.google.inject.Key;
 import com.mh.ta.base.selenium.SeleniumDriver;
@@ -17,10 +19,10 @@ import com.mh.ta.enums.DriverExecutable;
 import com.mh.ta.interfaces.driver.IDriver;
 
 public class DriverFactory {
-	static ThreadLocal<IDriver<?>> driverManagerStorage = new ThreadLocal<IDriver<?>>();
+	static LinkedMap<Long, IDriver<?>> driverStorage = new LinkedMap<Long, IDriver<?>>();
 
 	public static void createDriver(String driverType, String gridServer) {
-		if (driverManagerStorage.get() == null) {
+		if (!driverStorage.containsKey(Thread.currentThread().getId())) {
 			setDriverProperty(driverType);
 			SeleniumDriver driverManager = GuiceInjectFactory.instance().getObjectInstance(SeleniumDriver.class);
 			setUpDriver(driverType, gridServer, driverManager);
@@ -28,17 +30,18 @@ public class DriverFactory {
 	}
 
 	public static IDriver<?> getDriver() {
-		if (driverManagerStorage.get() == null) {
+		if (driverStorage.containsKey(Thread.currentThread().getId()))
+			return driverStorage.get(Thread.currentThread().getId());
+		else if (driverStorage.getValue(0) == null)
 			throw new TestContextException(
 					"Call createDriver method before can get driver, or set enableAPITest annotation in @EnableOneTimeConfig to false ");
-		}
-		return driverManagerStorage.get();
+		return driverStorage.getValue(0);
 	}
 
 	public static void diposeDriver() {
-		if (driverManagerStorage.get() != null)
-			driverManagerStorage.get().diposeDriver();
-		driverManagerStorage.remove();
+		if (driverStorage.containsKey(Thread.currentThread().getId()))
+			driverStorage.get(Thread.currentThread().getId()).diposeDriver();
+		driverStorage.remove(Thread.currentThread().getId());
 	}
 
 	private static void configDriver(IDriver<?> driver) {
@@ -56,7 +59,7 @@ public class DriverFactory {
 	private static void setUpDriver(String driverType, String gridServer, SeleniumDriver driverManager) {
 		setUpRemoteDrvierOptions(driverType, gridServer, driverManager);
 		driverManager.createDriver(driverType);
-		driverManagerStorage.set(driverManager);
+		driverStorage.put(Thread.currentThread().getId(), driverManager);
 		configDriver(getDriver());
 	}
 

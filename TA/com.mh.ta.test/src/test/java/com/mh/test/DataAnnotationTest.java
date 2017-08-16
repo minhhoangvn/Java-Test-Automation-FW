@@ -10,7 +10,7 @@ import com.mh.ta.base.test.TAAssert;
 import com.mh.ta.core.annotation.DataSource;
 import com.mh.ta.core.annotation.EnableOneTimeConfig;
 
-@EnableOneTimeConfig(enable = false, enableAPITest = true)
+@EnableOneTimeConfig(enable = true, enableAPITest = true)
 public class DataAnnotationTest extends BaseTest {
 
 	@DataSource(dataFileName = "SampleTestData.xlsx", sheetName = "DataSheet1")

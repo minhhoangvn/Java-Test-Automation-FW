@@ -87,10 +87,13 @@ public class BaseWebTestNG {
 		try {
 			Injector injector = GuiceInjectFactory.instance().getInject();
 			injector.getInstance(Key.get(MainConfig.class, ApplicationConfig.class));
+			
 		} catch (ConfigurationException e) {
 			GuiceInjectFactory.instance().createInject(new MainConfigModule(configFile));
 			GuiceInjectFactory.instance().createInject(new SeleniumElementModule());
-			GuiceInjectFactory.instance().createInject(new KeywordModule());
+			GuiceInjectFactory.instance().createInject(new KeywordModule());			
+		}
+		finally {
 			GuiceInjectFactory.instance().injectToClass(this);
 		}
 	}

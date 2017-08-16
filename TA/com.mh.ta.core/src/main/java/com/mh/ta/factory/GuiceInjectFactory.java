@@ -1,5 +1,8 @@
 package com.mh.ta.factory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Module;
@@ -7,7 +10,7 @@ import com.google.inject.Module;
 public class GuiceInjectFactory {
 	private Injector inject = Guice.createInjector();
 	private static ThreadLocal<GuiceInjectFactory> instance = new ThreadLocal<GuiceInjectFactory>();
-
+	private static List<Module> listInjectModules = new ArrayList<Module>();
 	private GuiceInjectFactory() {
 
 	}
@@ -18,6 +21,11 @@ public class GuiceInjectFactory {
 				if (instance.get() == null) {
 					instance.set(new GuiceInjectFactory());
 					instance.get().inject = Guice.createInjector();
+					listInjectModules.forEach(m->{
+						Injector inject = instance.get().inject;
+						inject = inject.createChildInjector(m);
+						instance.get().inject = inject;
+					});
 				}
 			}
 
@@ -36,7 +44,7 @@ public class GuiceInjectFactory {
 		Injector inject = instance.get().inject;
 		inject = inject.createChildInjector(module);
 		instance.get().inject = inject;
-
+		listInjectModules.add(module);
 	}
 
 	public <T> T getObjectInstance(Class<T> cls) {
