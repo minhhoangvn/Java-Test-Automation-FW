@@ -1,0 +1,31 @@
+emailConfig:
+  enable: false
+  emailUser: specflowdemo@gmail.com
+  emailPass: 9.34058877E8
+  host: smtp.gmail.com
+  fromTo: AutomationReport@kms-technology.com
+  sendTo:
+  - specflowdemo@gmail.com
+  subject: Automation Report
+  attachedReport: false
+sutConfig:
+  enableRecord: true
+  baseUri: www.google.com.vn/?gfe_rd=cr&dcr=0&ei=c13HWaK_C5GCoAPY6YGwAQ
+  accounts:
+  - username: password
+driverConfig:
+  driversFolderName: drivers
+  implicitWait: 5
+  pageloadTimeout: 60
+  drivercommandTimeout: 60
+  hidden: false
+  maximize: false
+  highLighElement: false
+  borderColor: red
+  backGroundColor: blue
+  timeOutHighlight: 200
+dataSourceConfig:
+  databaseDriver: com.mysql.cj.jdbc.Driver
+  databaseConnectionString: jdbc:mysql://127.0.0.1:3308/sampledata
+  databaseUserName: username
+  databasePassword: password

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite GUI Sample" parallel="tests" thread-count="4">
+	<test name="Chrome A" enabled="true" parallel="true" thread-count="3">
+		<classes>
+			<class name="com.mh.ta.test.SampleTest"></class>
+			<class name="com.mh.ta.test.SampleTest"></class>
+			<class name="com.mh.ta.test.SampleTest"></class>
+		</classes>
+	</test>
+	<test name="Chrome B" enabled="true">
+		<classes>
+			<class name="com.mh.ta.test.SampleTest"></class>
+		</classes>
+	</test>
+	<test name="Firefox B" enabled="true" parallel="true" thread-count="2">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.mh.ta.test.SampleTest"></class>
+		</classes>
+	</test>
+</suite>  

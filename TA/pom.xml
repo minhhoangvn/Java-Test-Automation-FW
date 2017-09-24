@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mh.ta</groupId>
+	<groupId>ta</groupId>
 	<artifactId>TA</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -11,10 +11,6 @@
 	<name>TA</name>
 	<description>TA</description>
 
-	<modules>
-		<module>com.mh.ta.core</module>
-		<module>com.mh.ta.test</module>
-	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,6 +28,17 @@
 		<apachepoi.version>3.16</apachepoi.version>
 		<snakeyaml.version>1.18</snakeyaml.version>
 		<mavencompiler.version>3.6.1</mavencompiler.version>
+		<log4j.version>2.8.2</log4j.version>
+		<screenrecord.version>0.7.7.0</screenrecord.version>
+		<mail.version>1.6.0</mail.version>
+		<assertj.version>3.8.0</assertj.version>
+		<cucumberTestNG.version>1.2.5</cucumberTestNG.version>
+		<cukes.version>1.2.5</cukes.version>
 	</properties>
 
+	<modules>
+		<module>ta-core</module>
+		<module>ta-cucumber-test</module>
+		<module>ta-dsl-test</module>
+	</modules>
 </project>

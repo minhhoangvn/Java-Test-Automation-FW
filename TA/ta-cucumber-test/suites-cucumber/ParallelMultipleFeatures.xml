@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite Sample Parallel" parallel="tests" thread-count="4">
+	<test name="Multiple Feature with same browser chrome" enabled="true" parallel="true" thread-count="2">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.mh.ta.test.SearchStoryTestFailed"></class>
+			<class name="com.mh.ta.test.SearchStoryTestPassed"></class>
+		</classes>
+	</test>
+	<test name="Multiple Feature with same browser firefox " enabled="true" parallel="true" thread-count="2">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.mh.ta.test.SearchStoryTestPassed"></class>
+			<class name="com.mh.ta.test.SearchStoryTestPassed"></class>
+		</classes>
+	</test>
+	
+	<test name="Feature with browser chrome" enabled="true" parallel="true" thread-count="2">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.mh.ta.test.SearchStoryTestPassed"></class>			
+		</classes>
+	</test>
+	
+	<test name="Feature with browser firefox" enabled="true" parallel="true" thread-count="2">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.mh.ta.test.SearchStoryTestFailed"></class>			
+		</classes>
+	</test>
+</suite>  
