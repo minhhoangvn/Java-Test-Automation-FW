@@ -3,7 +3,7 @@ emailConfig:
   emailUser: specflowdemo@gmail.com
   emailPass: 9.34058877E8
   host: smtp.gmail.com
-  fromTo: AutomationReport@kms-technology.com
+  fromTo: AutomationReport@domain.com
   sendTo:
   - specflowdemo@gmail.com
   subject: Automation Report
