@@ -95,7 +95,7 @@ public class ReportListener implements ITestListener {
 		ExtentTest testResult = suites.createNode(result.getMethod().getMethodName());
 		ReportInformation.appendTestReportInformation(result, testResult);
 		ReportHelper.createTestDetailInformation(testResult);
-		testResult.fail(String.format(Constant.TEST_INFO_FORMAT, "red", result.getThrowable()));
+		testResult.fail(String.format(Constant.TEST_INFO_FORMAT, "yellow", result.getThrowable()));
 		captureScreenShotIfFailedOnGUI(result, testResult);
 		ReportHelper.stopRecord(result, testResult);
 	}	
